@@ -78,7 +78,15 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
             println("Außer gefecht.")
         }
     }
-    override fun useSpecialMove() {
-        TODO("Not yet implemented")
+    fun motivateAll(heroes: MutableList<Hero>) {
+        for (hero in heroes) {
+            for (attack in hero.attacks) {
+                val randomPercent = (5..20).random().toDouble()
+                for (entry in hero.attacks.entries) {
+                    val newValue = entry.value + (entry.value * (randomPercent / 100)).toInt()
+                    TODO("create new heroes and return them")
+                }
+            }
+        }
     }
 }

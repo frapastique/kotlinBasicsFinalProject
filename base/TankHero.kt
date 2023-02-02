@@ -5,7 +5,6 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         "Sprung Schwert" to 350,
         "Sprung Act" to 400,
     )
-    override val hasMana: Boolean = false
     var hpCurrent: Int = this.hp
 
     override fun attack(target: Combatant): Int {
