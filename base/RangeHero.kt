@@ -79,9 +79,4 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
             println("Außer gefecht.")
         }
     }
-
-    override fun useSpecialMove() {
-        TODO("Not yet implemented")
-    }
-
 }
