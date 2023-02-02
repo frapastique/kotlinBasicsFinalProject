@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="class Input &amp;&amp; LeadHero">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="class LeadHero methods">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/Enemy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/Hero.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Combatant.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
@@ -19,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -52,9 +58,26 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestKt" />
+      <module name="kotlinCourceFinalProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.TestKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
-      <workItem from="1675329487285" duration="3663000" />
+      <workItem from="1675329487285" duration="9153000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -101,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675335102203</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="class LeadHero methods">
+      <created>1675336157709</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675336157709</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +143,7 @@
     <MESSAGE value="class Combatant add method" />
     <MESSAGE value="class Hero" />
     <MESSAGE value="class Input &amp;&amp; LeadHero" />
-    <option name="LAST_COMMIT_MESSAGE" value="class Input &amp;&amp; LeadHero" />
+    <MESSAGE value="class LeadHero methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="class LeadHero methods" />
   </component>
 </project>
