@@ -1,7 +1,7 @@
 fun main() {
     val lead: LeadHero = LeadHero("Sagittarius", 1300)
 
-    val smallEnemy0: SmallEnemy = SmallEnemy(generateName(), generateHP())
+    val smallEnemy0: SmallEnemy = SmallEnemy(generateName(), generateHP(), generateAttacks(2))
 
     lead.printStatus()
     println()
@@ -10,4 +10,6 @@ fun main() {
     smallEnemy0.takeDamage(lead.attack(smallEnemy0))
     println()
     lead.takeDamage(smallEnemy0.attack(lead))
+    println()
+    smallEnemy0.takeDamage(lead.attack(smallEnemy0))
 }

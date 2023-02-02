@@ -26,24 +26,14 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         when (val input: Int = Input().checkInput()) {
             1 -> {
                 return attacking(input - 1, target)
-                /*damage = attackDamage(input - 1)
-                attack = attackName(input - 1)
-                println("${this.name} attackiert ${target.name} mit '$attack' und verursacht " + damage + "HP schaden.")
-                return damage*/
             }
             2 -> {
-                damage = attackDamage(input - 1)
-                attack = attackName(input - 1)
-                println("${this.name} attackiert ${target.name} mit '$attack' und verursacht " + damage + "HP schaden.")
-                return damage
+                return attacking(input - 1, target)
             }
             3 -> {
                 if (this.manaPoints >= 10) {
                     this.manaPoints -= 10
-                    damage = attackDamage(input - 1)
-                    attack = attackName(input - 1)
-                    println("${this.name} attackiert ${target.name} mit '$attack' und verursacht " + damage + "HP schaden.")
-                    return damage
+                    return attacking(input - 1, target)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
                     return attack(target)
@@ -52,10 +42,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
             4 -> {
                 if (this.manaPoints >= 15) {
                     this.manaPoints -= 15
-                    damage = attackDamage(input - 1)
-                    attack = attackName(input - 1)
-                    println("${this.name} attackiert ${target.name} mit '$attack' und verursacht " + damage + "HP schaden.")
-                    return damage
+                    return attacking(input - 1, target)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
                     return attack(target)
@@ -71,14 +58,6 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         val hitInfo = this.attacks.entries.elementAt(entry)
         println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value}HP schaden.")
         return hitInfo.value
-    }
-    private fun attackName(entry: Int): String {
-        val hitName = this.attacks.entries.elementAt(entry)
-        return hitName.key
-    }
-    private fun attackDamage(entry: Int): Int {
-        val hitPoints = this.attacks.entries.elementAt(entry)
-        return hitPoints.value
     }
     override fun takeDamage(damage: Int) {
         if (damage >= this.hpCurrent) {
