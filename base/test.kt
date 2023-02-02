@@ -17,5 +17,4 @@ fun main() {
     println(Room("BLOB", enemies, 1))*/
     var rooms = generateRooms()
     println(Dungeon(rooms))
-
 }

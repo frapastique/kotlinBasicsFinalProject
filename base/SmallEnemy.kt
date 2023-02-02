@@ -17,4 +17,15 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
             println("Außer gefecht.")
         }
     }
+
+    override fun toString(): String {
+        val info: String = (
+                "Name:      ${this.name}\n" +
+                "HP:        ${this.hp}\n" +
+                "Atk 1:     ${this.attacks.entries.elementAt(0).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(0).value}\n" +
+                "Atk 2:     ${this.attacks.entries.elementAt(1).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(1).value}")
+        return info
+    }
 }

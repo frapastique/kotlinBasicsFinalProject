@@ -26,4 +26,21 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
             println("Außer gefecht.")
         }
     }
+
+    override fun toString(): String {
+        val info: String = (
+                "Name:      ${this.name}\n" +
+                "HP:        ${this.hp}\n" +
+                "Atk 1:     ${this.attacks.entries.elementAt(0).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(0).value}\n" +
+                "Atk 2:     ${this.attacks.entries.elementAt(1).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(1).value}\n" +
+                "Atk 3:     ${this.attacks.entries.elementAt(2).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(2).value}\n" +
+                "Atk 4:     ${this.attacks.entries.elementAt(3).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(3).value}\n" +
+                "Atk 5:     ${this.attacks.entries.elementAt(4).key}\n" +
+                "Dmg:       ${this.attacks.entries.elementAt(4).value}")
+        return info
+    }
 }
