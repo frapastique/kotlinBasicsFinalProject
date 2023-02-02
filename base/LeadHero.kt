@@ -73,15 +73,13 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     }
 
     override fun printStatus() {
-        println("Name: ${this.name}\n" +
-                "HP:   ${this.hpCurrent}\n" +
-                "Mana: ${this.manaPoints}")
+        println(
+            "Name: ${this.name}\n" +
+                    "HP:   ${this.hpCurrent}\n" +
+                    "Mana: ${this.manaPoints}"
+        )
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
         }
-    }
-
-    override fun move(direction: String) {
-        TODO("Not yet implemented")
     }
 }
