@@ -2,13 +2,20 @@ class Dungeon {
     var rooms: MutableList<Room> = mutableListOf()
 
     override fun toString(): String {
-        for (i in rooms) {
+        /*for (i in rooms) {
             var roomName= i.roomName
             var enemies = i.enemies
             var door = i.door
             println(Room(roomName, enemies, door))
+        }*/
+        var info = StringBuilder()
+        for (i in rooms) {
+            var roomName = i.roomName
+            var enemies = i.enemies
+            var door = i.door
+            info.append(Room(roomName, enemies, door))
         }
-        return ""
+        return info.toString()
     }
 
     fun generateRooms(): MutableList<Room> {
