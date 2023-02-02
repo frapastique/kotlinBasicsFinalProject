@@ -9,11 +9,13 @@ class Room(var roomName: String, var enemies: MutableList<Enemy>, var door: Int)
                 println()
             }
         }*/
-
-        val info = StringBuilder("\n${this.roomName}: ${this.enemies.size} Gegner\n")
+        Thread.sleep(100)
+        val info = StringBuilder("\n${this.roomName}: ${this.enemies.size} Gegner\n\n")
+        Thread.sleep(100)
         for (i in 0 until this.enemies.size) {
+            Thread.sleep(100)
             info.append("   Gegner ${i + 1}\n")
-            Thread.sleep(500)
+            Thread.sleep(100)
             info.append("${this.enemies[i]}\n")
             if (i < this.enemies.size - 1) {
                 info.append("\n")

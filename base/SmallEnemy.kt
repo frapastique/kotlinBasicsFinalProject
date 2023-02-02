@@ -19,6 +19,7 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
     }
 
     override fun toString(): String {
+        Thread.sleep(100)
         val info: String = (
                 "Name:      ${this.name}\n" +
                 "HP:        ${this.hp}\n" +
