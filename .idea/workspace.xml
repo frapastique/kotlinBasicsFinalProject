@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="class Hero">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="class Input &amp;&amp; LeadHero">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/Input.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Combatant.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
-      <workItem from="1675329487285" duration="2605000" />
+      <workItem from="1675329487285" duration="3663000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -96,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675334079033</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="class Input &amp;&amp; LeadHero">
+      <created>1675335102202</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675335102203</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +112,7 @@
     <MESSAGE value="class Combatant" />
     <MESSAGE value="class Combatant add method" />
     <MESSAGE value="class Hero" />
-    <option name="LAST_COMMIT_MESSAGE" value="class Hero" />
+    <MESSAGE value="class Input &amp;&amp; LeadHero" />
+    <option name="LAST_COMMIT_MESSAGE" value="class Input &amp;&amp; LeadHero" />
   </component>
 </project>
