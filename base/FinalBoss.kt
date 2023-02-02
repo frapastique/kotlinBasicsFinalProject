@@ -7,6 +7,7 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         "Feuer Ball" to 300,
     )
     private var hpCurrent: Int = this.hp
+    var counter: Int = 1
 
     override fun takeDamage(damage: Int) {
         if (damage >= this.hpCurrent) {
@@ -14,6 +15,7 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         } else {
             this.hpCurrent -= damage
         }
+        counter++
         printStatus()
     }
 
