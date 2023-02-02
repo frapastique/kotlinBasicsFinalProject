@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="MageHero">
-      <change afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="RangeHero">
+      <change afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675368426677</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="RangeHero">
+      <created>1675369218736</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1675369218736</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +246,8 @@
     <MESSAGE value="override toString() Thread.sleep(100)" />
     <MESSAGE value="readability" />
     <MESSAGE value="MageHero" />
-    <option name="LAST_COMMIT_MESSAGE" value="MageHero" />
+    <MESSAGE value="RangeHero" />
+    <option name="LAST_COMMIT_MESSAGE" value="RangeHero" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

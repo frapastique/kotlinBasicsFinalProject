@@ -62,4 +62,3 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         TODO("Not yet implemented")
     }
 }
-}
