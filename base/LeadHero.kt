@@ -1,13 +1,14 @@
 class LeadHero(name: String, hp: Int): Hero(name, hp) {
     override var attacks: MutableMap<String, Int> = mutableMapOf(
-        "Schwert" to 150,
-        "Axt" to 200,
-        "Eis" to 250,
-        "Blitz" to 300,
+        "Schwert" to 250,
+        "Axt" to 350,
+        "Eis" to 300,
+        "Blitz" to 400,
         )
     override val hasMana: Boolean = true
     var hpCurrent: Int = this.hp
     var manaPoints: Int = 150
+
     override fun attack(target: Combatant): Int {
         println("Wähle eine attacke:")
         var attack: String
@@ -18,9 +19,9 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         for (i in attacks) {
             print("\n($j) -> ${i.value}HP mit ${i.key}")
             if (i.key == ice)
-                print(" (Mana -10)")
+                print(" (Mana -20)")
             if (i.key == bolt)
-                print(" (Mana -15)")
+                print(" (Mana -50)")
             j++
         }
         when (val input: Int = Input().checkInput()) {
@@ -31,8 +32,8 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
                 return attacking(input - 1, target)
             }
             3 -> {
-                if (this.manaPoints >= 10) {
-                    this.manaPoints -= 10
+                if (this.manaPoints >= 20) {
+                    this.manaPoints -= 20
                     return attacking(input - 1, target)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
@@ -40,8 +41,8 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
                 }
             }
             4 -> {
-                if (this.manaPoints >= 15) {
-                    this.manaPoints -= 15
+                if (this.manaPoints >= 50) {
+                    this.manaPoints -= 50
                     return attacking(input - 1, target)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
