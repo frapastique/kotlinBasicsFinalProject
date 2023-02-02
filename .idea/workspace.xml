@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="class dungeon">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="override toString">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Room.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
-      <workItem from="1675329487285" duration="23673000" />
+      <workItem from="1675329487285" duration="25005000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -164,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675355500863</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="override toString">
+      <created>1675358068515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675358068515</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +187,8 @@
     <MESSAGE value="class FinalBoss counter" />
     <MESSAGE value="class Room, Door &amp;&amp; test, utils" />
     <MESSAGE value="class dungeon" />
-    <option name="LAST_COMMIT_MESSAGE" value="class dungeon" />
+    <MESSAGE value="override toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="override toString" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
