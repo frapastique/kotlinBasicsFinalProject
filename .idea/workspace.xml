@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="Dungeon generateRooms()">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="readability">
+      <change afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Room.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +195,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675362707159</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="override toString() Thread.sleep(100)">
+      <created>1675367367709</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1675367367710</updated>
+    </task>
+    <task id="LOCAL-00018" summary="readability">
+      <created>1675367705897</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1675367705897</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +231,9 @@
     <MESSAGE value="override toString (formatting)" />
     <MESSAGE value="FinalBoss summon() &amp;&amp; Room addEnemies()" />
     <MESSAGE value="Dungeon generateRooms()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dungeon generateRooms()" />
+    <MESSAGE value="override toString() Thread.sleep(100)" />
+    <MESSAGE value="readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="readability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
