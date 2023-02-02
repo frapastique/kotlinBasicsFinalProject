@@ -19,6 +19,15 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         printStatus()
     }
 
+    fun summon(): MutableList<Enemy> {
+        var enemies: MutableList<Enemy> = mutableListOf()
+        if (counter % 3 == 0) {
+            val countEnemies: Int = (2 .. 5).random()
+            enemies = generateSmallEnemy(countEnemies)
+        }
+        return enemies
+    }
+
     override fun printStatus() {
         println("Name: ${this.name}\n" +
                 "HP:   ${this.hpCurrent}")
