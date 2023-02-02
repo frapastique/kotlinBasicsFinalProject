@@ -5,4 +5,5 @@ abstract class Combatant(var name: String, var hp: Int) {
     fun checkDefeat(): Boolean {
         return this.hp <= 0
     }
+    open fun useSpecialMove() {}
 }
