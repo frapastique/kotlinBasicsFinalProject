@@ -14,5 +14,6 @@ fun main() {
     println()
     smallEnemy0.takeDamage(lead.attack(smallEnemy0))*/
 
-    println(generateRooms())
+    var rooms = generateRooms()
+    println(Dungeon(rooms))
 }

@@ -36,22 +36,22 @@ fun generateSmallEnemy(count: Int): MutableList<Enemy> {
     return enemiesList
 }
 
-fun generateRooms(): List<Room> {
+fun generateRooms(): MutableList<Room> {
     val amountRooms: Int = (2 .. 5).random()
     var enemies: MutableList<Enemy>
     var rooms: MutableList<Room> = mutableListOf()
     var roomName: String
     for (i in 1 .. amountRooms) {
         if (i < amountRooms) {
-            roomName = "Raum $i:"
+            roomName = "Raum $i"
             val countEnemies: Int = (2 .. 5).random()
             enemies = generateSmallEnemy(countEnemies)
-            rooms.add(Room(roomName, enemies))
+            rooms.add(Room(roomName, enemies, 1))
         } else {
-            roomName = "Raum Boss:"
+            roomName = "Boss Raum"
             var finalBoss: FinalBoss = FinalBoss("Dragon", 13750)
             enemies = mutableListOf<Enemy>(finalBoss)
-            rooms.add(Room(roomName, enemies))
+            rooms.add(Room(roomName, enemies, 0))
         }
     }
     return rooms
