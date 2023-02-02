@@ -1,9 +1,14 @@
 abstract class Combatant(var name: String, var hp: Int) {
-    open fun attack(): Int {
-        return 0
-    }
+    abstract val attacks: List<String>
+    abstract val hasMana: Boolean
+
+    abstract fun attack(target: Combatant): Int
+    abstract fun takeDamage(damage: Int)
+    abstract fun useSpecialMove()
+    abstract fun printStatus()
+//    abstract fun useItem(item: Item)
+    abstract fun move(direction: String)
     fun checkDefeat(): Boolean {
         return this.hp <= 0
     }
-    open fun useSpecialMove() {}
 }
