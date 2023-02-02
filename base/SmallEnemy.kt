@@ -17,4 +17,9 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
             println("Außer gefecht.")
         }
     }
+
+    override fun toString(): String {
+        println()
+        return "super.toString()"
+    }
 }

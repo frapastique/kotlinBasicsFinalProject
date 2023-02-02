@@ -49,7 +49,7 @@ fun generateRooms(): MutableList<Room> {
             rooms.add(Room(roomName, enemies, 1))
         } else {
             roomName = "Boss Raum"
-            var finalBoss: FinalBoss = FinalBoss("Dragon", 13750)
+            var finalBoss: FinalBoss = FinalBoss("Drache", 13750)
             enemies = mutableListOf<Enemy>(finalBoss)
             rooms.add(Room(roomName, enemies, 0))
         }

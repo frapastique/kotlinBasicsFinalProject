@@ -1,7 +1,6 @@
 fun main() {
     val lead: LeadHero = LeadHero("Sagittarius", 1300)
 
-    val smallEnemy0: SmallEnemy = SmallEnemy(generateName(), generateHP(), generateAttacks(2))
     var finalBoss: FinalBoss = FinalBoss("Dragon", 13750)
 
     /*lead.printStatus()
@@ -14,6 +13,9 @@ fun main() {
     println()
     smallEnemy0.takeDamage(lead.attack(smallEnemy0))*/
 
+    /*var enemies = generateSmallEnemy(3)
+    println(Room("BLOB", enemies, 1))*/
     var rooms = generateRooms()
     println(Dungeon(rooms))
+
 }
