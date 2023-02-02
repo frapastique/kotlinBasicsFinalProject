@@ -25,3 +25,34 @@ fun generateAttacks(attacksCount: Int): Map<String, Int> {
     }
     return attacks
 }
+
+fun generateSmallEnemy(count: Int): MutableList<Enemy> {
+    var enemiesList: MutableList<Enemy> = mutableListOf()
+
+    for (i in 1 .. count) {
+        var enemy: SmallEnemy = SmallEnemy(generateName(), generateHP(), generateAttacks(2))
+        enemiesList.add(enemy)
+    }
+    return enemiesList
+}
+
+fun generateRooms(): List<Room> {
+    val amountRooms: Int = (2 .. 5).random()
+    var enemies: MutableList<Enemy>
+    var rooms: MutableList<Room> = mutableListOf()
+    var roomName: String
+    for (i in 1 .. amountRooms) {
+        if (i < amountRooms) {
+            roomName = "Raum $i:"
+            val countEnemies: Int = (2 .. 5).random()
+            enemies = generateSmallEnemy(countEnemies)
+            rooms.add(Room(roomName, enemies))
+        } else {
+            roomName = "Raum Boss:"
+            var finalBoss: FinalBoss = FinalBoss("Dragon", 13750)
+            enemies = mutableListOf<Enemy>(finalBoss)
+            rooms.add(Room(roomName, enemies))
+        }
+    }
+    return rooms
+}
