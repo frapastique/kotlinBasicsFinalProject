@@ -5,32 +5,64 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
     var enemies: MutableList<Enemy> = this.room.enemies
     var hero: Hero? = null
     var enemy: Enemy? = null
-    var i: Int = 0
-    var counter: Int = 0
+    var counterBossAttacks: Int = 0
+
     fun startBattle() {
-        println(roomName)
+        println("$roomName\n")
         while (!endBattle()) {
-            var lastHero = i
-            i = (0 .. heroes.size - 1).random()
+            var randomHero: Int = (0 .. heroes.size - 1).random()
             var randomEnemy: Int = (0 .. enemies.size - 1).random()
             enemy = enemies[randomEnemy]
             var enemyName = enemy!!.name
             if (roomName == "Boss Raum" && enemyName == "Drache") {
-                counter++
-                if (counter == 4) {
-                    counter = 0
-                    var summonedEnemies = summon(this.room, counter)
+                counterBossAttacks++
+                if (counterBossAttacks == 4) {
+                    counterBossAttacks = 0
+                    var summonedEnemies = summon(this.room, counterBossAttacks)
                     this.room.addEnemies(summonedEnemies)
-                    println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.")
+                    println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
                 }
             }
-            enemy!!.printStatus()
-            hero = heroes[i]
+            hero = heroes[randomHero]
             resolveAttack(enemy!!, hero!!)
+            println("\nWähle einen Gegner!\n")
+            for (showEnemies in enemies) {
+                var number: Int = enemies.indexOf(showEnemies) + 1
+                println("($number) -> ${showEnemies.name} mit ${showEnemies.hp}HP")
+            }
+            chooseEnemy()
+            println("Wähle einen Held!\n")
+            for (showHeroes in heroes) {
+                var number: Int = heroes.indexOf(showHeroes) + 1
+                println("($number) -> ${showHeroes.showStatsSmall()[0]} mit ${showHeroes.showStatsSmall()[1]}HP")
+            }
+            chooseHero()
+            println()
+            enemy!!.printStatus()
             resolveAttack(hero!!, enemy!!)
         }
     }
-    fun endBattle(): Boolean {
+
+    private fun chooseEnemy() {
+        val input: Int = Input().checkInput()
+        if (input in 1 .. enemies.size) {
+            enemy = enemies[input - 1]
+        } else {
+            println("Eingabe nicht möglich. Versuche erneut.")
+            chooseEnemy()
+        }
+    }
+    private fun chooseHero() {
+        val input: Int = Input().checkInput()
+        if (input in 1 .. heroes.size) {
+            hero = heroes[input - 1]
+        } else {
+            println("Eingabe nicht möglich. Versuche erneut.")
+            chooseHero()
+        }
+    }
+
+    private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             println("Alle Gegner Besiegt. Du hast gewonnen.")
             exitProcess(1)
@@ -41,11 +73,19 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
         }
         return false
     }
-    fun resolveAttack(attacker: Combatant, defender: Combatant) {
+
+    private fun resolveAttack(attacker: Combatant, defender: Combatant) {
         defender.takeDamage(attacker.attack(defender))
-        if (defender.printStatus()) {
-            enemies.remove(defender)
-            heroes.remove(defender)
+        println()
+        if (defender.checkDefeat(defender.showStatsSmall()[1])) {
+            if (defender == enemy) {
+                defender.printStatus()
+                enemies.remove(defender)
+            }
+            if (defender == hero) {
+                heroes.remove(defender)
+                defender.printStatus()
+            }
         }
     }
 }

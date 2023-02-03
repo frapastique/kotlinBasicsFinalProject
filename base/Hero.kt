@@ -1,7 +1,10 @@
 abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
     open val hasMana: Boolean = false
+
     fun move(direction: String) {}
+
     //    abstract fun useItem(item: Item)
+
     override fun toString(): String {
         Thread.sleep(100)
         val info: String = (

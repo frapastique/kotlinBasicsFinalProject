@@ -1,6 +1,6 @@
 class Input {
-    fun checkInput(): Int{
-        print("\n\nDeine Entscheidung: ")
+    fun checkInput(): Int {
+        print("\nDeine Entscheidung: ")
         val input = readln()
         while (true) {
             try {

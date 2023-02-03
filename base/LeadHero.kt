@@ -10,7 +10,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     var manaPoints: Int = 150
 
     override fun attack(target: Combatant): Int {
-        println("Wähle eine attacke:")
+        println("\nWähle eine attacke:")
         var attack: String
         var damage: Int
         var j: Int = 1
@@ -66,7 +66,6 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         } else {
             this.hpCurrent -= damage
         }
-        printStatus()
     }
     override fun printStatus(): Boolean {
         if (this.hpCurrent <= 0) {
@@ -78,6 +77,9 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
                     "Mana: ${this.manaPoints}")
         }
         return false
+    }
+    override fun showStatsSmall(): List<Any> {
+        return listOf(this.name, this.hpCurrent, this.manaPoints)
     }
     fun motivateAll(heroes: MutableList<Hero>) {
         for (hero in heroes) {

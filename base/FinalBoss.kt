@@ -7,7 +7,6 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         "Feuer Ball" to 300,
     )
     private var hpCurrent: Int = this.hp
-    var counter: Int = 1
 
     override fun takeDamage(damage: Int) {
         if (damage >= this.hpCurrent) {
@@ -15,7 +14,6 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         } else {
             this.hpCurrent -= damage
         }
-        this.counter++
     }
 
     override fun printStatus(): Boolean {
@@ -28,7 +26,9 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         }
         return false
     }
-
+    override fun showStatsSmall(): List<Any> {
+        return listOf(this.name, this.hpCurrent)
+    }
     override fun toString(): String {
         val info: String = (
                 "Name:      ${this.name}\n" +

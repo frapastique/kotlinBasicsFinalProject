@@ -10,7 +10,7 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
     var manaPoints: Int = 150
 
     override fun attack(target: Combatant): Int {
-        println("Wähle eine attacke:")
+        println("\nWähle eine attacke:")
         var damage: Int
         var j: Int = 1
         val fire: String = this.attacks.entries.elementAt(2).key
@@ -78,5 +78,9 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
                     "Mana: ${this.manaPoints}")
         }
         return false
+    }
+
+    override fun showStatsSmall(): List<Any> {
+        return listOf(this.name, this.hpCurrent, this.manaPoints)
     }
 }

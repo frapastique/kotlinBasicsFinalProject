@@ -19,7 +19,9 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
         }
         return false
     }
-
+    override fun showStatsSmall(): List<Any> {
+        return listOf(this.name, this.hpCurrent)
+    }
     override fun toString(): String {
         Thread.sleep(200)
         val info: String = (
