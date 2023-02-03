@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="part of motivateAll in LeadHero">
-      <change afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="fighting possible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Combatant.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/FinalBoss.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Hero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
@@ -18,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675376047466</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fighting possible">
+      <created>1675429709480</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1675429709480</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +308,8 @@
     <MESSAGE value="TankHero fix" />
     <MESSAGE value="TankHero &amp;&amp; RangeHero fix" />
     <MESSAGE value="part of motivateAll in LeadHero" />
-    <option name="LAST_COMMIT_MESSAGE" value="part of motivateAll in LeadHero" />
+    <MESSAGE value="fighting possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="fighting possible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,6 +318,11 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="7" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/base/BattleManager.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

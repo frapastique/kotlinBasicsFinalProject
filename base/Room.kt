@@ -24,7 +24,7 @@ class Room(var roomName: String, var enemies: MutableList<Enemy>, var door: Int)
         return ""
     }
 
-    fun addEnemies(enemy: MutableList<SmallEnemy>) {
+    fun addEnemies(enemy: MutableList<Enemy>) {
         this.enemies.addAll(enemy)
     }
 }

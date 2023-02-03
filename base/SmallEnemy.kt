@@ -10,11 +10,12 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
     }
 
     override fun printStatus(): Boolean {
-        println("Name: ${this.name}\n" +
-                "HP:   ${this.hpCurrent}")
         if (this.hpCurrent <= 0) {
-            println("Außer gefecht.")
+            println("${this.name} wurde besiegt!")
             return true
+        } else {
+            println("Name: ${this.name}\n" +
+                    "HP:   ${this.hpCurrent}")
         }
         return false
     }

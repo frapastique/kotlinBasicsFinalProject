@@ -81,15 +81,13 @@ class MageHero(name: String, hp: Int) : Hero (name, hp) {
         printStatus()
     }
     override fun printStatus(): Boolean {
-        println(
-            "Name: ${this.name}\n" +
-            "HP:   ${this.hpCurrent}")
-        if (hasMana) {
-            println("Mana: ${this.manaPoints}")
-        }
         if (this.hpCurrent <= 0) {
-            println("Außer gefecht.")
+            println("${this.name} wurde besiegt!")
             return true
+        } else {
+            println("Name: ${this.name}\n" +
+                    "HP:   ${this.hpCurrent}\n" +
+                    "Mana: ${this.manaPoints}")
         }
         return false
     }

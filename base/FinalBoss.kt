@@ -15,25 +15,16 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         } else {
             this.hpCurrent -= damage
         }
-        counter++
-        printStatus()
-    }
-
-    fun summon(): MutableList<Enemy> {
-        var enemies: MutableList<Enemy> = mutableListOf()
-        if (counter % 3 == 0) {
-            val countEnemies: Int = (2 .. 5).random()
-            enemies = generateSmallEnemy(countEnemies)
-        }
-        return enemies
+        this.counter++
     }
 
     override fun printStatus(): Boolean {
-        println("Name: ${this.name}\n" +
-                "HP:   ${this.hpCurrent}")
         if (this.hpCurrent <= 0) {
-            println("Außer gefecht.")
+            println("${this.name} wurde besiegt!")
             return true
+        } else {
+            println("Name: ${this.name}\n" +
+                    "HP:   ${this.hpCurrent}")
         }
         return false
     }
