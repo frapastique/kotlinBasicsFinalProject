@@ -48,13 +48,15 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         }
         printStatus()
     }
-    override fun printStatus() {
+    override fun printStatus(): Boolean {
         println(
             "Name: ${this.name}\n" +
-                    "HP:   ${this.hpCurrent}\n"
+            "HP:   ${this.hpCurrent}\n"
         )
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
+            return true
         }
+        return false
     }
 }

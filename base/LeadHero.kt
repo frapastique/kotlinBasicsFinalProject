@@ -68,15 +68,18 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         }
         printStatus()
     }
-    override fun printStatus() {
+    override fun printStatus(): Boolean {
         println(
             "Name: ${this.name}\n" +
-                    "HP:   ${this.hpCurrent}\n" +
-                    "Mana: ${this.manaPoints}"
-        )
+            "HP:   ${this.hpCurrent}")
+        if (hasMana) {
+            println("Mana: ${this.manaPoints}")
+        }
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
+            return true
         }
+        return false
     }
     fun motivateAll(heroes: MutableList<Hero>) {
         for (hero in heroes) {

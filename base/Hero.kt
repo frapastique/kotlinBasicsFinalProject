@@ -5,7 +5,7 @@ abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
     override fun toString(): String {
         Thread.sleep(100)
         val info: String = (
-                "Name:      ${this.name}\n" +
+                "\nName:      ${this.name}\n" +
                 "HP:        ${this.hp}\n" +
                 "Atk 1:     ${this.attacks.entries.elementAt(0).key}\n" +
                 "Dmg:       ${this.attacks.entries.elementAt(0).value}\n" +

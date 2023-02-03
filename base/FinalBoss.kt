@@ -28,12 +28,14 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         return enemies
     }
 
-    override fun printStatus() {
+    override fun printStatus(): Boolean {
         println("Name: ${this.name}\n" +
                 "HP:   ${this.hpCurrent}")
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
+            return true
         }
+        return false
     }
 
     override fun toString(): String {

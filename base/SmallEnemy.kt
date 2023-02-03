@@ -7,19 +7,20 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
         } else {
             this.hpCurrent -= damage
         }
-        printStatus()
     }
 
-    override fun printStatus() {
+    override fun printStatus(): Boolean {
         println("Name: ${this.name}\n" +
                 "HP:   ${this.hpCurrent}")
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
+            return true
         }
+        return false
     }
 
     override fun toString(): String {
-        Thread.sleep(100)
+        Thread.sleep(200)
         val info: String = (
                 "Name:      ${this.name}\n" +
                 "HP:        ${this.hp}\n" +

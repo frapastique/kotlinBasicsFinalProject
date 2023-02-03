@@ -66,17 +66,19 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
         } else {
             this.hpCurrent -= damage
         }
-        printStatus()
     }
 
-    override fun printStatus() {
+    override fun printStatus(): Boolean {
         println(
             "Name: ${this.name}\n" +
-                    "HP:   ${this.hpCurrent}\n" +
-                    "Mana: ${this.manaPoints}"
-        )
+            "HP:   ${this.hpCurrent}")
+        if (hasMana) {
+            println("Mana: ${this.manaPoints}")
+        }
         if (this.hpCurrent <= 0) {
             println("Außer gefecht.")
+            return true
         }
+        return false
     }
 }

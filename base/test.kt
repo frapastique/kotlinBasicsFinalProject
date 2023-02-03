@@ -5,7 +5,10 @@ fun main() {
     var tank: TankHero = TankHero("Grog", 1700)
 
     var heroesList: MutableList<Hero> = mutableListOf(lead, mage, range, tank)
-    println(tank)
-    lead.motivateAll(heroesList)
-    println(tank)
+
+    var rooms = Dungeon().generateRooms()
+
+    var room = rooms[0]
+
+    BattleManager(room, heroesList).startBattle()
 }
