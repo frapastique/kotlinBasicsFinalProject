@@ -34,7 +34,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
             println("Wähle einen Held!\n")
             for (showHeroes in heroes) {
                 var number: Int = heroes.indexOf(showHeroes) + 1
-                println("($number) -> ${showHeroes.showStatsSmall()[0]} mit ${showHeroes.showStatsSmall()[1]}HP")
+                println("($number) -> ${showHeroes.name} mit ${showHeroes.showStatsSmall()[1]}HP")
             }
             chooseHero()
             println()
