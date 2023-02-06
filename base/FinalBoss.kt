@@ -9,10 +9,10 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
     private var hpCurrent: Int = this.hp
 
     override fun takeDamage(damage: Int, factor: Double) {
-        if (damage >= this.hpCurrent) {
+        if (damage.times(factor).toInt() >= this.hpCurrent) {
             this.hpCurrent = 0
         } else {
-            this.hpCurrent -= damage
+            this.hpCurrent -= damage.times(factor).toInt()
         }
     }
 

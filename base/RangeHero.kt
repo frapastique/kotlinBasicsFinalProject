@@ -9,7 +9,7 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
     var hpCurrent: Int = this.hp
     var manaPoints: Int = 150
 
-    override fun attack(target: Combatant): Int {
+    override fun attack(target: Combatant, factor: Double): Int {
         println("\nWähle eine attacke:")
         var damage: Int
         var j: Int = 1
@@ -25,39 +25,39 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
         }
         when (val input: Int = Input().checkInput()) {
             1 -> {
-                return attacking(input - 1, target)
+                return attacking(input - 1, target, factor)
             }
             2 -> {
-                return attacking(input - 1, target)
+                return attacking(input - 1, target, factor)
             }
             3 -> {
                 if (this.manaPoints >= 30) {
                     this.manaPoints -= 30
-                    return attacking(input - 1, target)
+                    return attacking(input - 1, target, factor)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
-                    return attack(target)
+                    return attack(target, factor)
                 }
             }
             4 -> {
                 if (this.manaPoints >= 40) {
                     this.manaPoints -= 40
-                    return attacking(input - 1, target)
+                    return attacking(input - 1, target, factor)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
-                    return attack(target)
+                    return attack(target, factor)
                 }
             }
             else -> {
                 println("Eingabe nicht möglich. Versuche erneut!")
-                return attack(target)
+                return attack(target, factor)
             }
         }
     }
-    private fun attacking(entry: Int, target: Combatant): Int {
-        val hitInfo = this.attacks.entries.elementAt(entry)
-        println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value}HP schaden.")
-        return hitInfo.value
+    private fun attacking(entry: Int, target: Combatant, factor: Double): Int {
+        val hitInfo = (this.attacks.entries.elementAt(entry))
+        println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value.times(factor.toInt())}HP schaden.")
+        return hitInfo.value.times(factor.toInt())
     }
 
     override fun takeDamage(damage: Int, factor: Double) {

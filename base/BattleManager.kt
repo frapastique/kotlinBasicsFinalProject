@@ -1,12 +1,11 @@
 import kotlin.system.exitProcess
 
-class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
+class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoostFactor: Double) {
     var roomName = this.room.roomName
     var enemies: MutableList<Enemy> = this.room.enemies
     var hero: Hero? = null
     var enemy: Enemy? = null
     var counterBossAttacks: Int = 0
-    var heroBoostFactor: Double = 1.0
 
     fun startBattle(): MutableList<Hero> {
         println("$roomName\n")
@@ -96,10 +95,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
             if (defender == enemy) {
                 defender.printStatus()
                 enemies.remove(defender)
-            }
-            if (defender == hero) {
-                heroes.remove(defender)
+            } else {
                 defender.printStatus()
+                heroes.remove(defender)
             }
         }
     }
