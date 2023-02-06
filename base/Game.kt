@@ -7,17 +7,16 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms()
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
 
-    var heroBoostFactor: Double = 1.0
-
     fun startGame() {
         println("Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.")
         var currentHeroes: MutableList<Hero> = this.heroesList
+        var heroBoostFactor: Double = 1.0
         for (room in this.dungeon) {
-            currentHeroes = BattleManager(room, currentHeroes, this.heroBoostFactor).startBattle()
+            currentHeroes = BattleManager(room, currentHeroes, heroBoostFactor).startBattle()
             Thread.sleep(1000)
             if (this.lead in currentHeroes) {
-                var faktor: Int = (10 .. 110).random()
-                this.heroBoostFactor += faktor / 100
+                var faktor: Int = (1 .. 30).random()
+                heroBoostFactor += (faktor / 100.0)
                 println("${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!")
             }
         }

@@ -14,11 +14,13 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         var j: Int = 1
         val ice: String = this.attacks.entries.elementAt(2).key
         val bolt: String = this.attacks.entries.elementAt(3).key
-        for (i in attacks) {
-            print("\n($j) -> ${i.value}HP mit ${i.key}")
-            if (i.key == ice)
+        for (entry in attacks) {
+            var attackName: String = entry.key
+            var attackHP: Int = (entry.value.times(factor)).toInt()
+            print("\n($j) -> ${attackHP}HP mit $attackName")
+            if (entry.key == ice)
                 print(" (Mana -20)")
-            if (i.key == bolt)
+            if (entry.key == bolt)
                 print(" (Mana -50)")
             j++
         }
@@ -55,8 +57,10 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     }
     private fun attacking(entry: Int, target: Combatant, factor: Double): Int {
         val hitInfo = (this.attacks.entries.elementAt(entry))
-        println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value.times(factor.toInt())}HP schaden.")
-        return hitInfo.value.times(factor.toInt())
+        val attackName: String = hitInfo.key
+        val attackHP: Int = hitInfo.value.times(factor).toInt()
+        println("${this.name} attackiert ${target.name} mit '${attackName}' und verursacht ${attackHP}HP schaden.")
+        return attackHP
     }
     override fun takeDamage(damage: Int, factor: Double) {
         if (damage >= this.hpCurrent) {

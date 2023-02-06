@@ -11,15 +11,16 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
 
     override fun attack(target: Combatant, factor: Double): Int {
         println("\nWähle eine attacke:")
-        var damage: Int
         var j: Int = 1
         val fire: String = this.attacks.entries.elementAt(2).key
         val bolt: String = this.attacks.entries.elementAt(3).key
-        for (i in attacks) {
-            print("\n($j) -> ${i.value}HP mit ${i.key}")
-            if (i.key == fire)
+        for (entry in attacks) {
+            var attackName: String = entry.key
+            var attackHP: Int = (entry.value.times(factor)).toInt()
+            print("\n($j) -> ${attackHP}HP mit $attackName")
+            if (attackName == fire)
                 print(" (Mana -30)")
-            if (i.key == bolt)
+            if (attackName == bolt)
                 print(" (Mana -40)")
             j++
         }
@@ -56,8 +57,10 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
     }
     private fun attacking(entry: Int, target: Combatant, factor: Double): Int {
         val hitInfo = (this.attacks.entries.elementAt(entry))
-        println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value.times(factor.toInt())}HP schaden.")
-        return hitInfo.value.times(factor.toInt())
+        val attackName: String = hitInfo.key
+        val attackHP: Int = hitInfo.value.times(factor).toInt()
+        println("${this.name} attackiert ${target.name} mit '${attackName}' und verursacht ${attackHP}HP schaden.")
+        return attackHP
     }
 
     override fun takeDamage(damage: Int, factor: Double) {

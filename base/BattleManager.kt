@@ -37,6 +37,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 }
                 chooseEnemy()
                 enemy!!.printStatus()
+                heroRound.printStatus()
                 resolveAttack(heroRound, enemy!!)
                 if (this.enemies.isEmpty()) {
                     break
@@ -86,9 +87,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
 
     private fun resolveAttack(attacker: Combatant, defender: Combatant) {
         if (defender == this.enemy) {
-            defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
-        } else {
             defender.takeDamage(attacker.attack(defender, this.heroBoostFactor), this.heroBoostFactor)
+        } else {
+            defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
         }
         println()
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
