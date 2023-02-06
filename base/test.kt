@@ -8,7 +8,6 @@ fun main() {
 
     var rooms = Dungeon().generateRooms()
 
-    var room: Room = rooms.first()
-
-    BattleManager(room, heroesList, 1.5).startBattle()
+    var room: Room = rooms.last()
+    BattleManager(room, heroesList, 1.0).startBattle()
 }

@@ -1,4 +1,4 @@
-class Room(var roomName: String, var enemies: MutableList<Enemy>, var door: Int) : Door() {
+class Room(var roomName: String, var enemies: MutableList<Enemy>) {
     override fun toString(): String {
         Thread.sleep(500)
         println("\n${this.roomName}: ${this.enemies.size} Gegner\n")

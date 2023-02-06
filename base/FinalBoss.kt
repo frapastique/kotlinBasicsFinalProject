@@ -26,9 +26,11 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         }
         return false
     }
+
     override fun showStatsSmall(): List<Any> {
         return listOf(this.name, this.hpCurrent)
     }
+
     override fun toString(): String {
         val info: String = (
                 "Name:      ${this.name}\n" +

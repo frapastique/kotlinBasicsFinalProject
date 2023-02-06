@@ -7,8 +7,7 @@ class Dungeon {
         for (i in rooms) {
             var roomName = i.roomName
             var enemies = i.enemies
-            var door = i.door
-            info.append(Room(roomName, enemies, door))
+            info.append(Room(roomName, enemies))
         }
         return info.toString()
     }
@@ -23,7 +22,7 @@ class Dungeon {
                 roomName = "Raum $i"
                 val countEnemies: Int = (2 .. 5).random()
                 enemies = generateSmallEnemy(countEnemies)
-                rooms.add(Room(roomName, enemies, 1))
+                rooms.add(Room(roomName, enemies))
             } else {
                 roomName = "Boss Raum"
                 var finalBossHP: Int = when (amountRooms) {
@@ -45,7 +44,7 @@ class Dungeon {
                 }
                 var finalBoss: FinalBoss = FinalBoss("Drache", finalBossHP)
                 enemies = mutableListOf<Enemy>(finalBoss)
-                rooms.add(Room(roomName, enemies, 0))
+                rooms.add(Room(roomName, enemies))
             }
         }
         return rooms

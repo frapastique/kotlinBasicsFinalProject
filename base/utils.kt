@@ -32,7 +32,7 @@ fun generateSmallEnemy(count: Int): MutableList<Enemy> {
     return enemiesList
 }
 
-fun summon(room: Room, counter: Int): MutableList<Enemy>{
+fun summon(counter: Int): MutableList<Enemy>{
     var enemies: MutableList<Enemy> = mutableListOf()
     if (counter % 4 == 0) {
         val countEnemies: Int = (2 .. 5).random()

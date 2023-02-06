@@ -32,7 +32,11 @@ class Game {
                     }
                 }
             }
-
+            if (room.enemies.isEmpty()) {
+                println("\n\n ACHTUNG: Der Raum ist leer!")
+            } else {
+                println("\n\n ACHTUNG: Der Raum ist nicht leer!")
+            }
         }
     }
 }

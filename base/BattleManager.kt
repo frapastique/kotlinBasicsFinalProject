@@ -23,30 +23,36 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
             for (enemyRound in this.enemies) {
                 var randomHero: Int = (0 .. heroes.size - 1).random()
                 this.hero = this.heroes[randomHero]
-                resolveAttack(enemyRound, this.hero!!)
                 var enemyName = enemyRound.name
-                if (roomName == "Boss Raum" && enemyName == "Drache") {
-                    counterBossAttacks++
-                    if (counterBossAttacks == 5) {
-                        counterBossAttacks = 0
-                        var summonedEnemies = summon(this.room, counterBossAttacks)
-                        this.room.addEnemies(summonedEnemies)
-                        println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
-                    }
-                }
+                resolveAttack(enemyRound, this.hero!!)
                 if (endBattle()) {
                     break
+                }
+                if (roomName == "Boss Raum" && enemyName == "Drache") {
+                    counterBossAttacks++
+                    if (counterBossAttacks == 4) {
+                        counterBossAttacks = 0
+                        var summonedEnemies = summon(counterBossAttacks)
+                        this.room.addEnemies(summonedEnemies)
+                        println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
+                        Thread.sleep(1000)
+                        break
+                    }
                 }
             }
 
             for (heroRound in this.heroes) {
-                println("Wähle einen Gegner:")
-                for (showEnemies in enemies) {
-                    var number: Int = enemies.indexOf(showEnemies) + 1
-                    println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+                if (this.enemies.size > 1) {
+                    println("Wähle einen Gegner:")
+                    for (showEnemies in enemies) {
+                        var number: Int = enemies.indexOf(showEnemies) + 1
+                        println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+                    }
+                    println()
+                    chooseEnemy()
+                } else {
+                    this.enemy = enemies.first()
                 }
-                chooseEnemy()
-                println()
                 if (heroRound.hasMana) {
                     println("${heroRound.name} (${heroRound.showStatsSmall()[2]}MP) vs. ${this.enemy!!.name} (${this.enemy!!.showStatsSmall()[1]}HP)")
                 } else {
@@ -103,7 +109,18 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         if (defender == this.enemy) {
             defender.takeDamage(attacker.attack(defender, this.heroBoostFactor), this.heroBoostFactor)
         } else {
-            defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
+            if (attacker.name == "Drache") {
+                var damageCode: Int = attacker.attack(defender, 1.0)
+                if (damageCode == 7777) {
+                    var dragonDamage = 250
+                    for (heroAreaDamage in this.heroes) {
+                        heroAreaDamage.takeDamage(dragonDamage, 1.0)
+                        println("${attacker.name} attackiert ${heroAreaDamage.name} mit 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
+                    }
+                }
+            } else {
+                defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
+            }
         }
         println()
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
