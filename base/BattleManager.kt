@@ -8,8 +8,18 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     var counterBossAttacks: Int = 0
 
     fun startBattle(): MutableList<Hero> {
-        println("$roomName\n")
+        println("""
+            Du hast nun $roomName betreten!
+            
+            Dich erwartet:
+            """.trimIndent())
+        for (showEnemies in enemies) {
+            var number: Int = enemies.indexOf(showEnemies) + 1
+            println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+        }
+        println()
         do {
+            Thread.sleep(1000)
             for (enemyRound in this.enemies) {
                 var randomHero: Int = (0 .. heroes.size - 1).random()
                 this.hero = this.heroes[randomHero]
@@ -30,14 +40,18 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
             }
 
             for (heroRound in this.heroes) {
-                println("\nWähle einen Gegner!\n")
+                println("Wähle einen Gegner:")
                 for (showEnemies in enemies) {
                     var number: Int = enemies.indexOf(showEnemies) + 1
                     println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
                 }
                 chooseEnemy()
-                enemy!!.printStatus()
-                heroRound.printStatus()
+                println()
+                if (heroRound.hasMana) {
+                    println("${heroRound.name} (${heroRound.showStatsSmall()[2]}MP) vs. ${this.enemy!!.name} (${this.enemy!!.showStatsSmall()[1]}HP)")
+                } else {
+                    println("${heroRound.name} vs. ${this.enemy!!.name} (${this.enemy!!.showStatsSmall()[1]}HP)")
+                }
                 resolveAttack(heroRound, enemy!!)
                 if (this.enemies.isEmpty()) {
                     break

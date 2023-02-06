@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="heroBoostFactor fix">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="heroBoostFactor append to all heroes; add HP range for final Boss according to room count">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/FinalBoss.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Enemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Enemy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
@@ -98,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
       <workItem from="1675329487285" duration="31045000" />
-      <workItem from="1675675583946" duration="17876000" />
+      <workItem from="1675675583946" duration="21670000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -345,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675700351330</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="heroBoostFactor append to all heroes; add HP range for final Boss according to room count">
+      <created>1675705063111</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1675705063111</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +369,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="class dungeon" />
     <MESSAGE value="override toString" />
     <MESSAGE value="merge generateSmallEnemy with generateName, generateHP, generateAttacks" />
     <MESSAGE value="override toString (formatting)" />
@@ -388,7 +393,8 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="add heroBoostFactor" />
     <MESSAGE value="heroBoostFactor fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="heroBoostFactor fix" />
+    <MESSAGE value="heroBoostFactor append to all heroes; add HP range for final Boss according to room count" />
+    <option name="LAST_COMMIT_MESSAGE" value="heroBoostFactor append to all heroes; add HP range for final Boss according to room count" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

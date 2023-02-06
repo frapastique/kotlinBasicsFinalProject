@@ -13,8 +13,9 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         for (entry in attacks) {
             var attackName: String = entry.key
             var attackHP: Int = (entry.value.times(factor)).toInt()
-            print("\n($j) -> ${attackHP}HP mit $attackName")
+            print("($j) -> ${attackHP}HP mit $attackName")
             j++
+            println()
         }
         when (val input: Int = Input().checkInput()) {
             1 -> {
@@ -39,7 +40,7 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         val hitInfo = (this.attacks.entries.elementAt(entry))
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
-        println("${this.name} attackiert ${target.name} mit '${attackName}' und verursacht ${attackHP}HP schaden.")
+        println("\n${this.name} attackiert ${target.name} mit '${attackName}' und verursacht ${attackHP}HP schaden.")
         return attackHP
     }
     override fun takeDamage(damage: Int, factor: Double) {
