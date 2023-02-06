@@ -48,8 +48,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                         var number: Int = enemies.indexOf(showEnemies) + 1
                         println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
                     }
-                    println()
                     chooseEnemy()
+                    println()
                 } else {
                     this.enemy = enemies.first()
                 }
@@ -113,9 +113,10 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 var damageCode: Int = attacker.attack(defender, 1.0)
                 if (damageCode == 7777) {
                     var dragonDamage = 250
+                    println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)
-                        println("${attacker.name} attackiert ${heroAreaDamage.name} mit 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
+                        println("${heroAreaDamage.name} hat nun ${heroAreaDamage.showStatsSmall()[1]}HP")
                     }
                 }
             } else {
