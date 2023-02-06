@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="Boss Fight summon()">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="BattleManager small fix">
+      <change afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Combatant.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Enemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Enemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/FinalBoss.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Hero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Input.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,29 +29,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2LB16CemvTz54KwQvOzbmc6j7BP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -93,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
       <workItem from="1675329487285" duration="31045000" />
+      <workItem from="1675675583946" duration="4516000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -276,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675434254440</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="BattleManager choose who">
+      <created>1675440871481</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1675440871481</updated>
+    </task>
+    <task id="LOCAL-00028" summary="BattleManager small fix">
+      <created>1675441024796</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1675441024796</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,8 +308,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="class Combatant" />
     <MESSAGE value="class Combatant add method" />
     <MESSAGE value="class Hero" />
     <MESSAGE value="class Input &amp;&amp; LeadHero" />
@@ -319,7 +331,9 @@
     <MESSAGE value="part of motivateAll in LeadHero" />
     <MESSAGE value="fighting possible" />
     <MESSAGE value="Boss Fight summon()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boss Fight summon()" />
+    <MESSAGE value="BattleManager choose who" />
+    <MESSAGE value="BattleManager small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="BattleManager small fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -330,5 +344,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

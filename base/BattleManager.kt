@@ -64,9 +64,13 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
 
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
-            println("Alle Gegner Besiegt. Du hast gewonnen.")
-            exitProcess(1)
+            if (roomName == "Final Boss") {
+                println("Dungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
+            } else {
+                println("Alle Gegner Besiegt. Raum gesäubert!")
+            }
         }
+
         if (heroes.isEmpty()) {
             println("Alle deine Helden wurden besiegt. Du hast verloren")
             exitProcess(1)
