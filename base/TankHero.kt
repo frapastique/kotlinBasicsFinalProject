@@ -3,7 +3,7 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         "Schwert" to 250,
         "Axt" to 300,
         "Sprung Schwert" to 350,
-        "Sprung Act" to 400,
+        "Sprung Axt" to 400,
     )
     var hpCurrent: Int = this.hp
 

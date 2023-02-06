@@ -18,6 +18,18 @@ class Input {
                         4 -> {
                             return 4
                         }
+                        5 -> {
+                            return 5
+                        }
+                        6 -> {
+                            return 6
+                        }
+                        7 -> {
+                            return 7
+                        }
+                        8 -> {
+                            return 8
+                        }
                         else -> {
                             return 0
                         }

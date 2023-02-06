@@ -26,7 +26,7 @@ class Dungeon {
                 rooms.add(Room(roomName, enemies, 1))
             } else {
                 roomName = "Boss Raum"
-                var finalBoss: FinalBoss = FinalBoss("Drache", 13750)
+                var finalBoss: FinalBoss = FinalBoss("Drache", 9999)
                 enemies = mutableListOf<Enemy>(finalBoss)
                 rooms.add(Room(roomName, enemies, 0))
             }

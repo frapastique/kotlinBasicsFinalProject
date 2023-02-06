@@ -9,26 +9,28 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
 
     fun startBattle() {
         println("$roomName\n")
-        while (!endBattle()) {
-            var randomHero: Int = (0 .. heroes.size - 1).random()
+        do {
             var randomEnemy: Int = (0 .. enemies.size - 1).random()
+            var randomHero: Int = (0 .. heroes.size - 1).random()
             enemy = enemies[randomEnemy]
+            hero = heroes[randomHero]
             var enemyName = enemy!!.name
             if (roomName == "Boss Raum" && enemyName == "Drache") {
                 counterBossAttacks++
-                if (counterBossAttacks == 4) {
+                if (counterBossAttacks == 5) {
                     counterBossAttacks = 0
                     var summonedEnemies = summon(this.room, counterBossAttacks)
                     this.room.addEnemies(summonedEnemies)
                     println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
                 }
             }
-            hero = heroes[randomHero]
             resolveAttack(enemy!!, hero!!)
+
+
             println("\nWähle einen Gegner!\n")
             for (showEnemies in enemies) {
                 var number: Int = enemies.indexOf(showEnemies) + 1
-                println("($number) -> ${showEnemies.name} mit ${showEnemies.hp}HP")
+                println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
             }
             chooseEnemy()
             println("Wähle einen Held!\n")
@@ -40,7 +42,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
             println()
             enemy!!.printStatus()
             resolveAttack(hero!!, enemy!!)
-        }
+        } while (!endBattle())
     }
 
     private fun chooseEnemy() {
@@ -66,8 +68,10 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
         if (enemies.isEmpty()) {
             if (roomName == "Final Boss") {
                 println("Dungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
+                return true
             } else {
                 println("Alle Gegner Besiegt. Raum gesäubert!")
+                return true
             }
         }
 
