@@ -7,42 +7,43 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
     var enemy: Enemy? = null
     var counterBossAttacks: Int = 0
 
-    fun startBattle() {
+    fun startBattle(): MutableList<Hero> {
         println("$roomName\n")
         do {
-            var randomEnemy: Int = (0 .. enemies.size - 1).random()
-            var randomHero: Int = (0 .. heroes.size - 1).random()
-            enemy = enemies[randomEnemy]
-            hero = heroes[randomHero]
-            var enemyName = enemy!!.name
-            if (roomName == "Boss Raum" && enemyName == "Drache") {
-                counterBossAttacks++
-                if (counterBossAttacks == 5) {
-                    counterBossAttacks = 0
-                    var summonedEnemies = summon(this.room, counterBossAttacks)
-                    this.room.addEnemies(summonedEnemies)
-                    println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
+            for (enemyRound in this.enemies) {
+                var randomHero: Int = (0 .. heroes.size - 1).random()
+                this.hero = this.heroes[randomHero]
+                resolveAttack(enemyRound, this.hero!!)
+                var enemyName = enemyRound.name
+                if (roomName == "Boss Raum" && enemyName == "Drache") {
+                    counterBossAttacks++
+                    if (counterBossAttacks == 5) {
+                        counterBossAttacks = 0
+                        var summonedEnemies = summon(this.room, counterBossAttacks)
+                        this.room.addEnemies(summonedEnemies)
+                        println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
+                    }
+                }
+                if (endBattle()) {
+                    break
                 }
             }
-            resolveAttack(enemy!!, hero!!)
 
-
-            println("\nWähle einen Gegner!\n")
-            for (showEnemies in enemies) {
-                var number: Int = enemies.indexOf(showEnemies) + 1
-                println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+            for (heroRound in this.heroes) {
+                println("\nWähle einen Gegner!\n")
+                for (showEnemies in enemies) {
+                    var number: Int = enemies.indexOf(showEnemies) + 1
+                    println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+                }
+                chooseEnemy()
+                enemy!!.printStatus()
+                resolveAttack(heroRound, enemy!!)
+                if (this.enemies.isEmpty()) {
+                    break
+                }
             }
-            chooseEnemy()
-            println("Wähle einen Held!\n")
-            for (showHeroes in heroes) {
-                var number: Int = heroes.indexOf(showHeroes) + 1
-                println("($number) -> ${showHeroes.name} mit ${showHeroes.showStatsSmall()[1]}HP")
-            }
-            chooseHero()
-            println()
-            enemy!!.printStatus()
-            resolveAttack(hero!!, enemy!!)
         } while (!endBattle())
+        return this.heroes
     }
 
     private fun chooseEnemy() {
@@ -54,6 +55,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
             chooseEnemy()
         }
     }
+
     private fun chooseHero() {
         val input: Int = Input().checkInput()
         if (input in 1 .. heroes.size) {
@@ -68,7 +70,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
         if (enemies.isEmpty()) {
             if (roomName == "Final Boss") {
                 println("Dungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
-                return true
+                exitProcess(1)
             } else {
                 println("Alle Gegner Besiegt. Raum gesäubert!")
                 return true
