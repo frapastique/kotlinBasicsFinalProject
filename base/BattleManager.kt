@@ -86,9 +86,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
 
     private fun resolveAttack(attacker: Combatant, defender: Combatant) {
         if (defender == this.enemy) {
-            defender.takeDamage(attacker.attack(defender), 1.0)
+            defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
         } else {
-            defender.takeDamage(attacker.attack(defender), this.heroBoostFactor)
+            defender.takeDamage(attacker.attack(defender, this.heroBoostFactor), this.heroBoostFactor)
         }
         println()
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
