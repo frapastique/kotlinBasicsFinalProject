@@ -7,10 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="small arrangements">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="Battle Working (now)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Combatant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/FinalBoss.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675329486222</updated>
       <workItem from="1675329487285" duration="31045000" />
-      <workItem from="1675675583946" duration="8326000" />
+      <workItem from="1675675583946" duration="10355000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -303,7 +310,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675690594326</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Battle Working">
+      <created>1675693453759</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1675693453759</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Battle Working (now)">
+      <created>1675693466677</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1675693466677</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,8 +342,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="class Input &amp;&amp; LeadHero" />
-    <MESSAGE value="class LeadHero methods" />
     <MESSAGE value="class FinalBoss &amp;&amp; utils" />
     <MESSAGE value="class FinalBoss counter" />
     <MESSAGE value="class Room, Door &amp;&amp; test, utils" />
@@ -346,7 +365,9 @@
     <MESSAGE value="BattleManager small fix" />
     <MESSAGE value="Add Game &amp;&amp; startGame" />
     <MESSAGE value="small arrangements" />
-    <option name="LAST_COMMIT_MESSAGE" value="small arrangements" />
+    <MESSAGE value="Battle Working" />
+    <MESSAGE value="Battle Working (now)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Battle Working (now)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -60,7 +60,7 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
         return hitInfo.value
     }
 
-    override fun takeDamage(damage: Int) {
+    override fun takeDamage(damage: Int, factor: Double) {
         if (damage >= this.hpCurrent) {
             this.hpCurrent = 0
         } else {

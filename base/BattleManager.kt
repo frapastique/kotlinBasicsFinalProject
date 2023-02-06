@@ -6,6 +6,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
     var hero: Hero? = null
     var enemy: Enemy? = null
     var counterBossAttacks: Int = 0
+    var heroBoostFactor: Double = 1.0
 
     fun startBattle(): MutableList<Hero> {
         println("$roomName\n")
@@ -85,7 +86,11 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>) {
     }
 
     private fun resolveAttack(attacker: Combatant, defender: Combatant) {
-        defender.takeDamage(attacker.attack(defender))
+        if (defender == this.enemy) {
+            defender.takeDamage(attacker.attack(defender), 1.0)
+        } else {
+            defender.takeDamage(attacker.attack(defender), this.heroBoostFactor)
+        }
         println()
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
             if (defender == enemy) {

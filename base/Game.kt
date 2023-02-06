@@ -7,7 +7,7 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms()
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
     fun startGame() {
-        println("Du betrittst den Dungeon mit ${dungeon.size} Räumen.")
+        println("Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.")
         var currentHeroes: MutableList<Hero> = this.heroesList
         for (room in this.dungeon) {
             currentHeroes = BattleManager(room, currentHeroes).startBattle()

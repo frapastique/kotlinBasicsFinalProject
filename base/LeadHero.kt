@@ -60,7 +60,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         println("${this.name} attackiert ${target.name} mit '${hitInfo.key}' und verursacht ${hitInfo.value}HP schaden.")
         return hitInfo.value
     }
-    override fun takeDamage(damage: Int) {
+    override fun takeDamage(damage: Int, factor: Double) {
         if (damage >= this.hpCurrent) {
             this.hpCurrent = 0
         } else {
