@@ -1,4 +1,4 @@
-fun generateSmallEnemy(count: Int): MutableList<Enemy> {
+fun generateSmallEnemy(count: Int, round: Int): MutableList<Enemy> {
     var enemiesList: MutableList<Enemy> = mutableListOf()
 
     for (i in 1 .. count) {
@@ -12,6 +12,9 @@ fun generateSmallEnemy(count: Int): MutableList<Enemy> {
         val name = namesList.random()
 
         val hp: Int = (175 .. 300).random()
+        if (round > 0) {
+            hp.times(round)
+        }
 
         val attacks: MutableMap<String, Int> = mutableMapOf()
         for (i in 1 .. 2) {
@@ -32,11 +35,17 @@ fun generateSmallEnemy(count: Int): MutableList<Enemy> {
     return enemiesList
 }
 
-fun summon(counter: Int): MutableList<Enemy>{
+fun summon(counter: Int, round:Int): MutableList<Enemy>{
     var enemies: MutableList<Enemy> = mutableListOf()
     if (counter % 4 == 0) {
         val countEnemies: Int = (2 .. 5).random()
-        enemies = generateSmallEnemy(countEnemies)
+        enemies = generateSmallEnemy(countEnemies, round)
     }
     return enemies
+}
+
+fun generateItems(quantity: Int): MutableList<Item> {
+    var healPotion: HealPotion = HealPotion("Heiltrank", "Füllt das Leben des Helden voll auf.", quantity)
+    var manaPotion: ManaPotion = ManaPotion("Manatrank", "Füllt die Mana des Helden voll auf.", quantity)
+    return mutableListOf(healPotion, manaPotion)
 }

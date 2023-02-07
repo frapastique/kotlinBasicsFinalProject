@@ -1,7 +1,27 @@
 abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
     open val hasMana: Boolean = false
 
-    //    abstract fun useItem(item: Item)
+    fun chooseAction(): Boolean {
+        println("""
+            Wähle eine Aktion:
+            (1) -> Item nutzen
+            (2) -> Attackieren
+        """.trimIndent())
+        when (Input().checkInput()) {
+            1 -> {
+                return true
+            }
+            2 -> {
+                return false
+            }
+            else -> {
+                println("Eingabe nicht möglich.")
+                return chooseAction()
+            }
+        }
+    }
+
+    abstract fun useItem(item: Item): Boolean
 
     override fun toString(): String {
         Thread.sleep(100)

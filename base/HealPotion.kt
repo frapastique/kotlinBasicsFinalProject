@@ -1,4 +1,6 @@
 class HealPotion(name: String, description: String, quantity: Int) : Item(name, description, quantity) {
 
-    fun use(hero: Hero) {}
+    override fun use(hero: Hero, item: Item): Boolean {
+        return hero.useItem(item)
+    }
 }

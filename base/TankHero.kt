@@ -65,4 +65,15 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
     override fun showStatsSmall(): List<Any> {
         return listOf(this.name, this.hpCurrent)
     }
+
+    override fun useItem(item: Item): Boolean {
+        if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
+            hpCurrent = this.hp
+            println("Der Held ${this.name} wurde vollständig geheilt.")
+            return true
+        } else {
+            println("Das Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
+            return false
+        }
+    }
 }

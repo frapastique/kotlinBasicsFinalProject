@@ -82,18 +82,25 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         }
         return false
     }
+
     override fun showStatsSmall(): List<Any> {
         return listOf(this.name, this.hpCurrent, this.manaPoints)
     }
-    fun motivateAll(heroes: MutableList<Hero>) {
-        for (hero in heroes) {
-            for (attack in hero.attacks) {
-                val randomPercent = (5..20).random().toDouble()
-                for (entry in hero.attacks.entries) {
-                    val newValue = entry.value + (entry.value * (randomPercent / 100)).toInt()
-                    TODO("create new heroes and return them")
-                }
-            }
+
+    override fun useItem(item: Item): Boolean {
+        if (item.name == "Manatrank" && this.manaPoints < 50) {
+            this.manaPoints = 150
+            return true
+        } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
+            println("Der Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!")
+            return false
+        } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
+            hpCurrent = this.hp
+            println("Der Held ${this.name} wurde vollständig geheilt.")
+            return true
+        } else {
+            println("Das Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
+            return false
         }
     }
 }

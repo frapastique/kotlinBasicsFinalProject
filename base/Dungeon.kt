@@ -1,50 +1,55 @@
 class Dungeon {
     var rooms: MutableList<Room> = mutableListOf()
 
-
     override fun toString(): String {
         var info = StringBuilder()
         for (i in rooms) {
             var roomName = i.roomName
             var enemies = i.enemies
-            info.append(Room(roomName, enemies))
+            var items = i.items
+            info.append(Room(roomName, enemies, items))
         }
         return info.toString()
     }
 
-    fun generateRooms(): MutableList<Room> {
+    fun generateRooms(round: Int): MutableList<Room> {
         val amountRooms: Int = (2 .. 5).random()
         var enemies: MutableList<Enemy>
         var rooms: MutableList<Room> = mutableListOf()
         var roomName: String
+        var items: MutableList<Item> = mutableListOf()
+
         for (i in 1 .. amountRooms) {
             if (i < amountRooms) {
                 roomName = "Raum $i"
                 val countEnemies: Int = (2 .. 5).random()
-                enemies = generateSmallEnemy(countEnemies)
-                rooms.add(Room(roomName, enemies))
+                enemies = generateSmallEnemy(countEnemies, round)
+                items = generateItems(countEnemies)
+                rooms.add(Room(roomName, enemies, items))
             } else {
                 roomName = "Boss Raum"
                 var finalBossHP: Int = when (amountRooms) {
                     5 -> {
                         (18000..20000).random()
                     }
-
                     4 -> {
                         (16000..18000).random()
                     }
-
                     3 -> {
                         (14000..16000).random()
                     }
-
                     else -> {
                         (9999..14000).random()
                     }
                 }
+
+                if (round > 1) {
+                    finalBossHP.times(round)
+                }
+
                 var finalBoss: FinalBoss = FinalBoss("Drache", finalBossHP)
                 enemies = mutableListOf<Enemy>(finalBoss)
-                rooms.add(Room(roomName, enemies))
+                rooms.add(Room(roomName, enemies, items))
             }
         }
         return rooms

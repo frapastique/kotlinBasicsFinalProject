@@ -6,8 +6,16 @@ fun main() {
 
     var heroesList: MutableList<Hero> = mutableListOf(lead, mage, range, tank)
 
-    var rooms = Dungeon().generateRooms()
+    var rooms = Dungeon().generateRooms(3)
+
+    var healPotion: HealPotion = HealPotion("Heiltrank", "Füllt das Leben des Helden voll auf.", 2)
+    var manaPotion: ManaPotion = ManaPotion("Manatrank", "Füllt die Mana des Helden voll auf.", 2)
+    var items: MutableList<Item> = mutableListOf(healPotion, manaPotion)
+
+    var inventory: Inventory = Inventory(items)
 
     var room: Room = rooms.last()
-    BattleManager(room, heroesList, 1.0).startBattle()
+
+    BattleManager(room, heroesList, 1.0, inventory, 3).startBattle()
+
 }
