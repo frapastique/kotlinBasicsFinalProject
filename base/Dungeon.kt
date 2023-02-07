@@ -28,23 +28,22 @@ class Dungeon {
                 roomName = "Boss Raum"
                 var finalBossHP: Int = when (amountRooms) {
                     5 -> {
-                        (18000..20000).random()
+                        (14000..15000).random()
                     }
                     4 -> {
-                        (16000..18000).random()
+                        (12000..13000).random()
                     }
                     3 -> {
-                        (14000..16000).random()
+                        (11000..12000).random()
                     }
                     else -> {
-                        (9999..14000).random()
+                        (10000..11000).random()
                     }
                 }
-
                 if (round > 1) {
-                    finalBossHP.times(round)
+                    var newFinalBossHP: Int = finalBossHP.plus(round.times(500))
+                    finalBossHP = newFinalBossHP
                 }
-
                 var finalBoss: FinalBoss = FinalBoss("Drache", finalBossHP)
                 enemies = mutableListOf<Enemy>(finalBoss)
                 rooms.add(Room(roomName, enemies))

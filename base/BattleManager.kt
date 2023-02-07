@@ -9,21 +9,20 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
 
     fun startBattle(): MutableList<Hero> {
         println("""
-            Du hast nun $roomName betreten!
             
             Inventar:
             ${this.inventory.items[0].quantity}x ${this.inventory.items[0].name}
             ${this.inventory.items[1].quantity}x ${this.inventory.items[1].name}
             
-            Dich erwartet:
+            Im ${this.roomName} erwarten dich ${this.enemies.size} Gegner:
             """.trimIndent())
         for (showEnemies in enemies) {
-            var number: Int = enemies.indexOf(showEnemies) + 1
-            println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+            Thread.sleep(500)
+            showEnemies.printStatus()
         }
         println()
         do {
-            Thread.sleep(1000)
+            Thread.sleep(500)
             for (enemyRound in this.enemies) {
                 var randomHero: Int = (0 .. heroes.size - 1).random()
                 this.hero = this.heroes[randomHero]
@@ -47,7 +46,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
 
             for (heroRound in this.heroes) {
                 heroRound.printStatus()
-                println()
+                Thread.sleep(500)
                 if (heroRound.checkStats() && heroRound.chooseAction() && useItem(heroRound)) {
                     heroRound.printStatus()
                 } else {
@@ -55,17 +54,15 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                         println("\nWähle einen Gegner:")
                         for (showEnemies in enemies) {
                             var number: Int = enemies.indexOf(showEnemies) + 1
-                            println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
+                            println("($number) -> ${ANSI_BLUE + showEnemies.name + ANSI_RESET} mit ${showEnemies.showStatsSmall()[1]}HP")
                         }
                         chooseEnemy()
                         println()
+                        this.enemy!!.printStatus()
+                        heroRound.printStatus()
                     } else {
                         this.enemy = enemies.first()
-                    }
-                    if (heroRound.hasMana) {
-                        println("${heroRound.name} (${heroRound.showStatsSmall()[2]}MP) vs. ${this.enemy!!.name} (${this.enemy!!.showStatsSmall()[1]}HP)")
-                    } else {
-                        println("${heroRound.name} vs. ${this.enemy!!.name} (${this.enemy!!.showStatsSmall()[1]}HP)")
+                        this.enemy!!.printStatus()
                     }
                     resolveAttack(heroRound, enemy!!)
                     if (this.enemies.isEmpty()) {
@@ -103,7 +100,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 println("\nDungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
                 return true
             } else {
-                println("\nAlle Gegner Besiegt. Raum gesäubert!")
+                println("Alle Gegner Besiegt. Raum gesäubert!")
                 return true
             }
         }
@@ -118,7 +115,10 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun resolveAttack(attacker: Combatant, defender: Combatant) {
         if (defender == this.enemy) {
             defender.takeDamage(attacker.attack(defender, this.heroBoostFactor), this.heroBoostFactor)
-            println()
+            Thread.sleep(500)
+            if (defender.name == "Drache") {
+                println()
+            }
         } else {
             if (attacker.name == "Drache") {
                 var damageCode: Int = attacker.attack(defender, 1.0)
@@ -126,24 +126,29 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                     var dragonDamage = 250
                     println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
+                        Thread.sleep(500)
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)
                     }
                     println()
                 } else {
                     defender.takeDamage(damageCode, 1.0)
+                    Thread.sleep(500)
                     println()
                 }
             } else {
                 defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
+                Thread.sleep(500)
                 println()
             }
         }
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
             if (defender == enemy) {
                 defender.printStatus()
+                Thread.sleep(500)
                 enemies.remove(defender)
             } else {
                 defender.printStatus()
+                Thread.sleep(500)
                 heroes.remove(defender)
             }
         }

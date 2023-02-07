@@ -36,28 +36,43 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
             }
         }
     }
+
     private fun attacking(entry: Int, target: Combatant, factor: Double): Int {
         val hitInfo = (this.attacks.entries.elementAt(entry))
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
-        println("\n${this.name} attackiert ${target.name} mit '${attackName}' und verursacht ${attackHP}HP schaden.")
+        println("\n${ANSI_CYAN + this.name + ANSI_RESET} attackiert ${ANSI_BLUE + target.name + ANSI_RESET} mit '${attackName}' und verursacht ${ANSI_RED + attackHP + ANSI_RESET}HP schaden.")
         return attackHP
     }
+
     override fun takeDamage(damage: Int, factor: Double) {
         if (damage >= this.hpCurrent) {
             this.hpCurrent = 0
         } else {
             this.hpCurrent -= damage
-            println("${this.name} hat nun ${this.hpCurrent}HP")
+            if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
+                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}HP")
+            } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
+                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}HP")
+            } else {
+                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_RED + this.hpCurrent + ANSI_RESET}HP")
+            }
         }
     }
+
     override fun printStatus(): Boolean {
         if (this.hpCurrent <= 0) {
-            println("${this.name} wurde besiegt!")
+            println("${ANSI_CYAN + this.name + ANSI_RESET} wurde besiegt!")
             return true
         } else {
-            println("Name: ${this.name}\n" +
-                    "HP:   ${this.hpCurrent}")
+            println("Name: ${ANSI_CYAN + this.name + ANSI_RESET}")
+            if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
+                println("HP:   ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}")
+            } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
+                println("HP:   ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}")
+            } else {
+                println("HP:   ${ANSI_RED + this.hpCurrent + ANSI_RESET}")
+            }
         }
         return false
     }

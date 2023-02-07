@@ -5,7 +5,7 @@ abstract class Enemy(name: String, hp: Int) : Combatant(name, hp) {
             return 7777
         } else {
             var damage: Int = this.attacks[attack]!!
-            println("${this.name} attackiert ${target.name} mit '$attack' und verursacht " + damage + "HP schaden.")
+            println("${ANSI_BLUE + this.name + ANSI_RESET} attackiert ${ANSI_CYAN + target.name + ANSI_RESET} mit '$attack' und verursacht " + ANSI_RED + damage + ANSI_RESET + "HP schaden.")
             Thread.sleep(500)
             return damage
         }

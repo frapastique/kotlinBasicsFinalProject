@@ -16,8 +16,15 @@ class Game {
     var quantityForItems: Int = 2
 
     fun startGame() {
-        println("Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.")
+        println("\nDu betrittst einen Dungeon mit ${this.dungeon.size} Räumen.\n")
+        Thread.sleep(500)
         for (room in this.dungeon) {
+            println("Helden:")
+            for (hero in currentHeroes) {
+                Thread.sleep(500)
+                hero.printStatus()
+            }
+            Thread.sleep(500)
             var addItemCount: Int = room.enemies.size
             var currentInventory: Inventory = Inventory(generateItems(quantityForItems))
             this.currentHeroes = BattleManager(room, this.currentHeroes, this.heroBoostFactor, currentInventory, this.round).startBattle()
@@ -25,7 +32,7 @@ class Game {
             if (this.lead in this.currentHeroes) {
                 var faktor: Int = (1 .. 30).random()
                 heroBoostFactor += (faktor / 100.0)
-                println("\n${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!\n")
+                println("\n${ANSI_CYAN + this.lead.name + ANSI_RESET} " + ANSI_PURPLE_BACKGROUND + ANSI_BLACK + "motiviert alle und erhöht alle Angriffe um $faktor%!" + ANSI_RESET + "\n")
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
