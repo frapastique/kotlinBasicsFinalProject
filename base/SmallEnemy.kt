@@ -6,6 +6,7 @@ class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) 
             this.hpCurrent = 0
         } else {
             this.hpCurrent -= damage
+            println("${this.name} hat nun ${this.hpCurrent}HP\n")
         }
     }
 

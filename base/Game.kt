@@ -17,7 +17,7 @@ class Game {
             if (this.lead in currentHeroes) {
                 var faktor: Int = (1 .. 30).random()
                 heroBoostFactor += (faktor / 100.0)
-                println("${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!")
+                println("\n${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!")
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
@@ -34,8 +34,6 @@ class Game {
             }
             if (room.enemies.isEmpty()) {
                 println("\n\n ACHTUNG: Der Raum ist leer!")
-            } else {
-                println("\n\n ACHTUNG: Der Raum ist nicht leer!")
             }
         }
     }

@@ -48,6 +48,7 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
             this.hpCurrent = 0
         } else {
             this.hpCurrent -= damage
+            println("${this.name} hat nun ${this.hpCurrent}HP")
         }
     }
     override fun printStatus(): Boolean {

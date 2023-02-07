@@ -90,16 +90,16 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             if (roomName == "Final Boss") {
-                println("Dungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
+                println("\nDungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
                 exitProcess(1)
             } else {
-                println("Alle Gegner Besiegt. Raum gesäubert!")
+                println("\nAlle Gegner Besiegt. Raum gesäubert!")
                 return true
             }
         }
 
         if (heroes.isEmpty()) {
-            println("Alle deine Helden wurden besiegt. Du hast verloren")
+            println("\nAlle deine Helden wurden besiegt. Du hast verloren!")
             exitProcess(1)
         }
         return false
@@ -108,6 +108,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun resolveAttack(attacker: Combatant, defender: Combatant) {
         if (defender == this.enemy) {
             defender.takeDamage(attacker.attack(defender, this.heroBoostFactor), this.heroBoostFactor)
+            println()
         } else {
             if (attacker.name == "Drache") {
                 var damageCode: Int = attacker.attack(defender, 1.0)
@@ -116,14 +117,17 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                     println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)
-                        println("${heroAreaDamage.name} hat nun ${heroAreaDamage.showStatsSmall()[1]}HP")
                     }
+                    println()
+                } else {
+                    defender.takeDamage(damageCode, 1.0)
+                    println()
                 }
             } else {
                 defender.takeDamage(attacker.attack(defender, 1.0), 1.0)
+                println()
             }
         }
-        println()
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
             if (defender == enemy) {
                 defender.printStatus()
