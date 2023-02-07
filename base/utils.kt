@@ -11,8 +11,8 @@ fun generateSmallEnemy(count: Int, round: Int): MutableList<Enemy> {
         )
         val name = namesList.random()
 
-        val hp: Int = (175 .. 300).random()
-        if (round > 0) {
+        var hp: Int = (175 .. 300).random()
+        if (round > 1) {
             hp.times(round)
         }
 

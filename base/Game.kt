@@ -1,7 +1,7 @@
 import kotlin.system.exitProcess
 
 class Game {
-    var round: Int = 0
+    var round: Int = 1
 
     var lead: LeadHero = LeadHero("Sagittarius", 1300)
     var mage: MageHero = MageHero("Keyleth", 1250)
@@ -11,23 +11,21 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms(round)
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
 
-    var healPotion: HealPotion = HealPotion("Heiltrank", "Füllt das Leben des Helden voll auf.", 2)
-    var manaPotion: ManaPotion = ManaPotion("Manatrank", "Füllt die Mana des Helden voll auf.", 2)
-    var items: MutableList<Item> = mutableListOf(healPotion, manaPotion)
-
-    var inventory: Inventory = Inventory(items)
+    var currentHeroes: MutableList<Hero> = this.heroesList
+    var heroBoostFactor: Double = 1.0
+    var quantityForItems: Int = 2
 
     fun startGame() {
         println("Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.")
-        var currentHeroes: MutableList<Hero> = this.heroesList
-        var heroBoostFactor: Double = 1.0
         for (room in this.dungeon) {
-            currentHeroes = BattleManager(room, currentHeroes, heroBoostFactor, inventory, round).startBattle()
+            var addItemCount: Int = room.enemies.size
+            var currentInventory: Inventory = Inventory(generateItems(quantityForItems))
+            this.currentHeroes = BattleManager(room, this.currentHeroes, this.heroBoostFactor, currentInventory, this.round).startBattle()
             Thread.sleep(1000)
-            if (this.lead in currentHeroes) {
+            if (this.lead in this.currentHeroes) {
                 var faktor: Int = (1 .. 30).random()
                 heroBoostFactor += (faktor / 100.0)
-                println("\n${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!")
+                println("\n${this.lead.name} motiviert alle und erhöht alle Angriffe um $faktor%!\n")
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
@@ -37,13 +35,13 @@ class Game {
                     } else {
                         hero.hp -= hero.hp.div(2)
                         currentHeroes.add(hero)
-                        println("$hero wurde mit ${hero.hp}HP von ${this.mage} wiederbelebt und ist nun wieder kampf tüchtig!")
+                        println("\n$hero wurde mit ${hero.hp}HP von ${this.mage} wiederbelebt und ist nun wieder kampf tüchtig!")
                         Thread.sleep(500)
                     }
                 }
             }
             if (room.roomName == "Boss Raum") {
-                println("Möchtest du noch eine Runde Spielen?\n")
+                println("\nMöchtest du noch eine Runde Spielen?")
                 println("""
                     (1) -> Ja, neuen Dungeon spielen.
                     (2) -> Nein, Spiel beenden.
@@ -52,7 +50,8 @@ class Game {
                 when (input) {
                     1 -> {
                         round++
-                        restartGame(this.inventory, round)
+                        restartGame(this.round)
+                        startGame()
                     }
                     2 -> {
                         println("\nDanke für Spielen!")
@@ -60,10 +59,15 @@ class Game {
                     }
                 }
             }
+            quantityForItems += (addItemCount.div(2))
         }
     }
 
-    private fun restartGame(inventory: Inventory, round: Int) {
+    private fun restartGame(round: Int) {
         this.dungeon = Dungeon().generateRooms(round)
+        this.currentHeroes = this.heroesList
+        for (hero in heroesList) {
+            hero.resetStats()
+        }
     }
 }

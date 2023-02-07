@@ -7,20 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="add classes: Inventory, Item, ManaPotion &amp; HealPotion">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="Item usage and at victory choose between the next dungeon or stop playing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/HealPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/HealPotion.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Hero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Inventory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Inventory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Item.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ManaPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/ManaPotion.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Room.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
@@ -81,7 +80,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TestKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="kotlinCourceFinalProject" />
@@ -98,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.TestKt" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +112,7 @@
       <updated>1675329486222</updated>
       <workItem from="1675329487285" duration="31045000" />
       <workItem from="1675675583946" duration="28401000" />
-      <workItem from="1675758079735" duration="14434000" />
+      <workItem from="1675758079735" duration="26809000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -402,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675770967244</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Item usage and at victory choose between the next dungeon or stop playing">
+      <created>1675780908153</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1675780908153</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="override toString() Thread.sleep(100)" />
     <MESSAGE value="readability" />
     <MESSAGE value="MageHero" />
     <MESSAGE value="RangeHero" />
@@ -445,7 +450,8 @@
     <MESSAGE value="small fix" />
     <MESSAGE value="better console output" />
     <MESSAGE value="add classes: Inventory, Item, ManaPotion &amp; HealPotion" />
-    <option name="LAST_COMMIT_MESSAGE" value="add classes: Inventory, Item, ManaPotion &amp; HealPotion" />
+    <MESSAGE value="Item usage and at victory choose between the next dungeon or stop playing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Item usage and at victory choose between the next dungeon or stop playing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

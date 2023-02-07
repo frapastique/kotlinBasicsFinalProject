@@ -11,6 +11,10 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         println("""
             Du hast nun $roomName betreten!
             
+            Inventar:
+            ${this.inventory.items[0].quantity}x ${this.inventory.items[0].name}
+            ${this.inventory.items[1].quantity}x ${this.inventory.items[1].name}
+            
             Dich erwartet:
             """.trimIndent())
         for (showEnemies in enemies) {
@@ -34,7 +38,6 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                         counterBossAttacks = 0
                         var summonedEnemies = summon(counterBossAttacks, round)
                         this.room.addEnemies(summonedEnemies)
-                        this.room.addItems(generateItems(summonedEnemies.size))
                         println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
                         Thread.sleep(1000)
                         break
@@ -43,11 +46,13 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
             }
 
             for (heroRound in this.heroes) {
-                if (heroRound.chooseAction() && useItem(heroRound)) {
+                heroRound.printStatus()
+                println()
+                if (heroRound.checkStats() && heroRound.chooseAction() && useItem(heroRound)) {
                     heroRound.printStatus()
                 } else {
                     if (this.enemies.size > 1) {
-                        println("Wähle einen Gegner:")
+                        println("\nWähle einen Gegner:")
                         for (showEnemies in enemies) {
                             var number: Int = enemies.indexOf(showEnemies) + 1
                             println("($number) -> ${showEnemies.name} mit ${showEnemies.showStatsSmall()[1]}HP")
@@ -96,15 +101,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         if (enemies.isEmpty()) {
             if (roomName == "Final Boss") {
                 println("\nDungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
-                for (element in this.room.items) {
-                    inventory.addItem(element, element.quantity)
-                }
                 return true
             } else {
                 println("\nAlle Gegner Besiegt. Raum gesäubert!")
-                for (element in this.room.items) {
-                    inventory.addItem(element, element.quantity)
-                }
                 return true
             }
         }
@@ -156,18 +155,28 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         for (element in this.inventory.items) {
             println("""
                 ($k) -> ${element.name}
-                        ${element.quantity}
-                        ${element.description}
+                       ${element.quantity} im Inventar
+                       ${element.description}
                         """.trimIndent())
             k++
         }
+        println("(3) -> Inventar schließen und attackieren")
         when (Input().checkInput()) {
             1 -> {
-                return this.inventory.useItem(inventory.items[0], hero)
+                if (this.inventory.useItem(inventory.items[0], hero)) {
+                    return true
+                } else {
+                    return useItem(hero)
+                }
             }
             2 -> {
-                return this.inventory.useItem(inventory.items[0], hero)
+                if (this.inventory.useItem(inventory.items[1], hero)) {
+                    return true
+                } else {
+                    return useItem(hero)
+                }
             }
+            3 -> return false
             else -> {
                 println("Eingabe nicht möglich.")
                 return useItem(hero)

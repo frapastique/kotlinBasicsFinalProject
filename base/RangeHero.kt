@@ -90,19 +90,29 @@ class RangeHero(name: String, hp: Int) : Hero(name, hp) {
     }
 
     override fun useItem(item: Item): Boolean {
-        if (item.name == "Manatrank" && this.manaPoints < 50) {
+        if (item.name == "Manatrank" && this.manaPoints < 30) {
             this.manaPoints = 150
+            println("\nDie Mana von ${this.name} wurde vollständig aufgefüllt.")
             return true
-        } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
-            println("Der Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!")
+        } else if (item.name == "Manatrank" && this.manaPoints > 30) {
+            println("\nDer Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!")
             return false
         } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("Der Held ${this.name} wurde vollständig geheilt.")
+            println("\nDer Held ${this.name} wurde vollständig geheilt.")
             return true
         } else {
-            println("Das Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
+            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
             return false
         }
+    }
+
+    override fun checkStats(): Boolean {
+        return (this.hpCurrent <= this.hp.div(2) || this.manaPoints < 50)
+    }
+
+    override fun resetStats() {
+        this.manaPoints = 150
+        this.hpCurrent = this.hp
     }
 }

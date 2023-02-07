@@ -15,7 +15,7 @@ abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
                 return false
             }
             else -> {
-                println("Eingabe nicht möglich.")
+                println("Eingabe nicht möglich.\n")
                 return chooseAction()
             }
         }
@@ -38,4 +38,8 @@ abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
                 "Dmg:       ${this.attacks.entries.elementAt(3).value}")
         return info
     }
+
+    abstract fun checkStats(): Boolean
+
+    open fun resetStats() {}
 }

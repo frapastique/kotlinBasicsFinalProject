@@ -69,11 +69,19 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
     override fun useItem(item: Item): Boolean {
         if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("Der Held ${this.name} wurde vollständig geheilt.")
+            println("\nDer Held ${this.name} wurde vollständig geheilt.")
             return true
         } else {
-            println("Das Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
+            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
             return false
         }
+    }
+
+    override fun checkStats(): Boolean {
+        return this.hpCurrent <= this.hp.div(2)
+    }
+
+    override fun resetStats() {
+        this.hpCurrent = this.hp
     }
 }

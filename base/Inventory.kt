@@ -1,7 +1,5 @@
 class Inventory(var items: MutableList<Item>) {
-    fun addItem(item: Item, amount: Int) {
-        item.increaseQuantity(amount)
-    }
+
     fun removeItem(item: Item) {
         item.decreaseQuantity()
     }
