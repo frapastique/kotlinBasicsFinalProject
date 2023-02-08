@@ -1,5 +1,5 @@
 fun main() {
-    var lead: LeadHero = LeadHero("Sagittarius", 1300)
+/*    var lead: LeadHero = LeadHero("Sagittarius", 1300)
     var mage: MageHero = MageHero("Keyleth", 1250)
     var range: RangeHero = RangeHero("Vex'ahlia", 1250)
     var tank: TankHero = TankHero("Grog", 1700)
@@ -16,5 +16,5 @@ fun main() {
 
     var room: Room = rooms.last()
 
-    BattleManager(room, heroesList, 1.0, inventory, 3).startBattle()
+    BattleManager(room, heroesList, 1.0, inventory, 3).startBattle()*/
 }

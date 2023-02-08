@@ -54,7 +54,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                         println("\nWähle einen Gegner:")
                         for (showEnemies in enemies) {
                             var number: Int = enemies.indexOf(showEnemies) + 1
-                            println("($number) -> ${ANSI_BLUE + showEnemies.name + ANSI_RESET} mit ${showEnemies.showStatsSmall()[1]}HP")
+                            println("($number) -> ${BLUE + showEnemies.name + RESET} mit ${showEnemies.showStatsSmall()[1]}HP")
                         }
                         chooseEnemy()
                         println()

@@ -1,22 +1,3 @@
-const val ANSI_RESET = "\u001B[0m"
-const val ANSI_BLACK = "\u001B[30m"
-const val ANSI_RED = "\u001B[31m"
-const val ANSI_GREEN = "\u001B[32m"
-const val ANSI_YELLOW = "\u001B[33m"
-const val ANSI_BLUE = "\u001B[34m"
-const val ANSI_PURPLE = "\u001B[35m"
-const val ANSI_CYAN = "\u001B[36m"
-const val ANSI_WHITE = "\u001B[37m"
-
-const val ANSI_BLACK_BACKGROUND = "\u001B[40m"
-const val ANSI_RED_BACKGROUND = "\u001B[41m"
-const val ANSI_GREEN_BACKGROUND = "\u001B[42m"
-const val ANSI_YELLOW_BACKGROUND = "\u001B[43m"
-const val ANSI_BLUE_BACKGROUND = "\u001B[44m"
-const val ANSI_PURPLE_BACKGROUND = "\u001B[45m"
-const val ANSI_CYAN_BACKGROUND = "\u001B[46m"
-const val ANSI_WHITE_BACKGROUND = "\u001B[47m"
-
 fun generateSmallEnemy(count: Int, round: Int): MutableList<Enemy> {
     var enemiesList: MutableList<Enemy> = mutableListOf()
 
@@ -68,4 +49,21 @@ fun generateItems(quantity: Int): MutableList<Item> {
     var healPotion: HealPotion = HealPotion("Heiltrank", "Füllt das Leben des Helden voll auf.", quantity)
     var manaPotion: ManaPotion = ManaPotion("Manatrank", "Füllt die Mana des Helden voll auf.", quantity)
     return mutableListOf(healPotion, manaPotion)
+}
+
+fun intro() {
+    print("\nGebe hier deinen Namen ein: ")
+    userName = readln()
+    println("\nHallo " + PURPLE + userName + RESET + "!\n\n" +
+            "Willkommen zum Abschlussprojekt zum \"Modul 2: Kotlin Basics\" beim Syntax-Institut!\n\n" +
+            "(Enter drücken um das Spiel zu starten)")
+
+    readln()
+}
+
+fun motivationQuote(): String {
+    var selectedQuote: String = listOfMotivationQuotes.random()
+    listOfMotivationQuotes.remove(selectedQuote)
+
+    return selectedQuote
 }

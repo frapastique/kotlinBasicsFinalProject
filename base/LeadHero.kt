@@ -61,7 +61,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         val hitInfo = (this.attacks.entries.elementAt(entry))
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
-        println("\n${ANSI_CYAN + this.name + ANSI_RESET} attackiert ${ANSI_BLUE + target.name + ANSI_RESET} mit '${attackName}' und verursacht ${ANSI_RED + attackHP + ANSI_RESET}HP schaden.")
+        println("\n${CYAN + this.name + RESET} attackiert ${BLUE + target.name + RESET} mit '${attackName}' und verursacht ${RED + attackHP + RESET}HP schaden.")
         return attackHP
     }
 
@@ -71,29 +71,29 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         } else {
             this.hpCurrent -= damage
             if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
-                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}HP")
+                println("${CYAN + this.name + RESET} hat nun ${GREEN + this.hpCurrent + RESET}HP")
             } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
-                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}HP")
+                println("${CYAN + this.name + RESET} hat nun ${YELLOW + this.hpCurrent + RESET}HP")
             } else {
-                println("${ANSI_CYAN + this.name + ANSI_RESET} hat nun ${ANSI_RED + this.hpCurrent + ANSI_RESET}HP")
+                println("${CYAN + this.name + RESET} hat nun ${RED + this.hpCurrent + RESET}HP")
             }
         }
     }
 
     override fun printStatus(): Boolean {
         if (this.hpCurrent <= 0) {
-            println("${ANSI_CYAN + this.name + ANSI_RESET} wurde besiegt!")
+            println("${CYAN + this.name + RESET} wurde besiegt!")
             return true
         } else {
-            println("Name: ${ANSI_CYAN + this.name + ANSI_RESET}")
+            println("Name: ${CYAN + this.name + RESET}")
             if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
-                println("HP:   ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${GREEN + this.hpCurrent + RESET}")
             } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
-                println("HP:   ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${YELLOW + this.hpCurrent + RESET}")
             } else {
-                println("HP:   ${ANSI_RED + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${RED + this.hpCurrent + RESET}")
             }
-            println("Mana: ${ANSI_PURPLE + this.manaPoints + ANSI_RESET}")
+            println("Mana: ${PURPLE + this.manaPoints + RESET}")
         }
         return false
     }
@@ -105,17 +105,17 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     override fun useItem(item: Item): Boolean {
         if (item.name == "Manatrank" && this.manaPoints < 50) {
             this.manaPoints = 150
-            println("\nDie Mana von ${ANSI_CYAN + this.name + ANSI_RESET} wurde vollständig aufgefüllt.")
+            println("\nDie Mana von ${CYAN + this.name + RESET} wurde vollständig aufgefüllt.")
             return true
         } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
-            println("\nDer Held ${ANSI_CYAN + this.name + ANSI_RESET} hat aktuell ${ANSI_PURPLE + this.manaPoints + ANSI_RESET} das auffüllen lohnt sich nicht!")
+            println("\nDer Held ${CYAN + this.name + RESET} hat aktuell ${PURPLE + this.manaPoints + RESET} das auffüllen lohnt sich nicht!")
             return false
         } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("\nDer Held ${ANSI_CYAN + this.name + ANSI_RESET} wurde vollständig geheilt.")
+            println("\nDer Held ${CYAN + this.name + RESET} wurde vollständig geheilt.")
             return true
         } else {
-            println("\nDas Leben von ${ANSI_CYAN + this.name + ANSI_RESET} ist über die hälfte voll und wird somit nicht geheilt.")
+            println("\nDas Leben von ${CYAN + this.name + RESET} ist über die hälfte voll und wird somit nicht geheilt.")
             return false
         }
     }

@@ -14,27 +14,27 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
         } else {
             this.hpCurrent -= damage
             if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
-                println("${ANSI_BLUE + this.name + ANSI_RESET} hat nun ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}HP")
+                println("${BLUE + this.name + RESET} hat nun ${GREEN + this.hpCurrent + RESET}HP")
             } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
-                println("${ANSI_BLUE + this.name + ANSI_RESET} hat nun ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}HP")
+                println("${BLUE + this.name + RESET} hat nun ${YELLOW + this.hpCurrent + RESET}HP")
             } else {
-                println("${ANSI_BLUE + this.name + ANSI_RESET} hat nun ${ANSI_RED + this.hpCurrent + ANSI_RESET}HP")
+                println("${BLUE + this.name + RESET} hat nun ${RED + this.hpCurrent + RESET}HP")
             }
         }
     }
 
     override fun printStatus(): Boolean {
         if (this.hpCurrent <= 0) {
-            println("${ANSI_BLUE + this.name + ANSI_RESET} wurde besiegt!")
+            println("${BLUE + this.name + RESET} wurde besiegt!")
             return true
         } else {
-            println("Name: ${ANSI_BLUE + this.name + ANSI_RESET}")
+            println("Name: ${BLUE + this.name + RESET}")
             if (this.hpCurrent >= this.hp.minus(this.hp.div(3))) {
-                println("HP:   ${ANSI_GREEN + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${GREEN + this.hpCurrent + RESET}")
             } else if (this.hpCurrent >= this.hp.minus(this.hp.div(3).times(2))) {
-                println("HP:   ${ANSI_YELLOW + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${YELLOW + this.hpCurrent + RESET}")
             } else {
-                println("HP:   ${ANSI_RED + this.hpCurrent + ANSI_RESET}")
+                println("HP:   ${RED + this.hpCurrent + RESET}")
             }
         }
         return false

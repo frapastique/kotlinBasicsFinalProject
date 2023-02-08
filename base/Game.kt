@@ -11,14 +11,15 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms(round)
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
 
-    var currentHeroes: MutableList<Hero> = this.heroesList
+    var currentHeroes: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.tank)
     var heroBoostFactor: Double = 1.0
     var quantityForItems: Int = 2
 
     fun startGame() {
-        println("\nDu betrittst einen Dungeon mit ${this.dungeon.size} Räumen.\n")
+        println("\n${WHITE_UNDERLINED}Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
         Thread.sleep(500)
         for (room in this.dungeon) {
+            ProgramUsage().start()
             println("Helden:")
             for (hero in currentHeroes) {
                 Thread.sleep(500)
@@ -32,7 +33,9 @@ class Game {
             if (this.lead in this.currentHeroes) {
                 var faktor: Int = (1 .. 30).random()
                 heroBoostFactor += (faktor / 100.0)
-                println("\n${ANSI_CYAN + this.lead.name + ANSI_RESET} " + ANSI_PURPLE_BACKGROUND + ANSI_BLACK + "motiviert alle und erhöht alle Angriffe um $faktor%!" + ANSI_RESET + "\n")
+                println("\n${CYAN + this.lead.name + RESET}:\n" +
+                        PURPLE_BOLD + motivationQuote() + RESET + "\n" +
+                        PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
@@ -40,9 +43,9 @@ class Game {
                     if (hero in currentHeroes) {
                         continue
                     } else {
-                        hero.hp -= hero.hp.div(2)
                         currentHeroes.add(hero)
-                        println("\n$hero wurde mit ${hero.hp}HP von ${this.mage} wiederbelebt und ist nun wieder kampf tüchtig!")
+                        println("\n${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
+                                " von ${CYAN + this.mage + RESET} wiederbelebt und ist nun wieder kampf tüchtig!\n")
                         Thread.sleep(500)
                     }
                 }
@@ -67,6 +70,8 @@ class Game {
                 }
             }
             quantityForItems += (addItemCount.div(2))
+            ProgramUsage().stop()
+            println("Der ${room.roomName} wurde innerhalb ${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
         }
     }
 

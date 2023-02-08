@@ -7,11 +7,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="update name">
-      <change afterPath="$PROJECT_DIR$/base/ProgramUsage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="add class ProgramUsage">
+      <change afterPath="$PROJECT_DIR$/base/ansiColors.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/publicVariables.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlinCourceFinalProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FinalFinalProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Enemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Enemy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/FinalBoss.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/RangeHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/SmallEnemy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/TankHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -102,7 +113,7 @@
       <workItem from="1675329487285" duration="31045000" />
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
-      <workItem from="1675848250441" duration="1721000" />
+      <workItem from="1675848250441" duration="6734000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -412,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675801894561</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add class ProgramUsage">
+      <created>1675853385237</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1675853385237</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MageHero" />
     <MESSAGE value="RangeHero" />
     <MESSAGE value="TankHero" />
     <MESSAGE value="TankHero fix" />
@@ -455,7 +472,8 @@
     <MESSAGE value="Item usage and at victory choose between the next dungeon or stop playing" />
     <MESSAGE value="better console output" />
     <MESSAGE value="updated console output" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated console output" />
+    <MESSAGE value="add class ProgramUsage" />
+    <option name="LAST_COMMIT_MESSAGE" value="add class ProgramUsage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
