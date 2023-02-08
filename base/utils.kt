@@ -55,9 +55,8 @@ fun intro() {
     print("\nGebe hier deinen Namen ein: ")
     userName = readln()
     println("\nHallo " + PURPLE + userName + RESET + "!\n\n" +
-            "Willkommen zum Abschlussprojekt zum \"Modul 2: Kotlin Basics\" beim Syntax-Institut!\n\n" +
-            "(Enter drücken um das Spiel zu starten)")
-
+            "Willkommen zum Abschlussprojekt zum \"Modul 2: Kotlin Basics\" beim Syntax-Institut!\n\n")
+    println("(Enter drücken um das Spiel zu starten)")
     readln()
 }
 

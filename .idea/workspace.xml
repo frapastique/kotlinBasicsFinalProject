@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="changed structure &amp;&amp; better console output">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="better console output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ProgramUsage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/ProgramUsage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/publicVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/publicVariables.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1675329487285" duration="31045000" />
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
-      <workItem from="1675848250441" duration="10116000" />
+      <workItem from="1675848250441" duration="15263000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -427,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675859337702</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fix ProgramUsage">
+      <created>1675864459426</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1675864459426</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TankHero" />
     <MESSAGE value="TankHero fix" />
     <MESSAGE value="TankHero &amp;&amp; RangeHero fix" />
     <MESSAGE value="part of motivateAll in LeadHero" />
@@ -466,11 +470,12 @@
     <MESSAGE value="small fix" />
     <MESSAGE value="add classes: Inventory, Item, ManaPotion &amp; HealPotion" />
     <MESSAGE value="Item usage and at victory choose between the next dungeon or stop playing" />
-    <MESSAGE value="better console output" />
     <MESSAGE value="updated console output" />
     <MESSAGE value="add class ProgramUsage" />
     <MESSAGE value="changed structure &amp;&amp; better console output" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed structure &amp;&amp; better console output" />
+    <MESSAGE value="fix ProgramUsage" />
+    <MESSAGE value="better console output" />
+    <option name="LAST_COMMIT_MESSAGE" value="better console output" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

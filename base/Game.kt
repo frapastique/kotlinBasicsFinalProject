@@ -33,7 +33,7 @@ class Game {
             if (this.lead in this.currentHeroes) {
                 var faktor: Int = (1 .. 30).random()
                 heroBoostFactor += (faktor / 100.0)
-                println("\n${CYAN + this.lead.name + RESET}:\n" +
+                println("\n${CYAN + this.lead.name + RESET} motiviert:\n" +
                         PURPLE_BOLD + motivationQuote() + RESET + "\n" +
                         PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
             }
@@ -44,7 +44,7 @@ class Game {
                         continue
                     } else {
                         currentHeroes.add(hero)
-                        println("\n${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
+                        println("${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
                                 " von ${CYAN + this.mage + RESET} wiederbelebt und ist nun wieder kampf tüchtig!\n")
                         Thread.sleep(500)
                     }
@@ -64,7 +64,7 @@ class Game {
                         startGame()
                     }
                     2 -> {
-                        println("\nDanke für Spielen!")
+                        println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!")
                         exitProcess(1)
                     }
                 }
