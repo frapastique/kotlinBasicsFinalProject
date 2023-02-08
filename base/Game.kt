@@ -11,7 +11,7 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms(round)
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
 
-    var currentHeroes: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.tank)
+    var currentHeroes: MutableList<Hero> = this.heroesList
     var heroBoostFactor: Double = 1.0
     var quantityForItems: Int = 2
 

@@ -17,4 +17,10 @@ fun main() {
     var room: Room = rooms.last()
 
     BattleManager(room, heroesList, 1.0, inventory, 3).startBattle()*/
+
+    ProgramUsage().start()
+    Thread.sleep(5000)
+    ProgramUsage().stop()
+
+    println(ProgramUsage().getElapsedTime())
 }

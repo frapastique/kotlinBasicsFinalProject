@@ -1,8 +1,6 @@
 import java.util.concurrent.TimeUnit.*
 
 class ProgramUsage {
-    private var startTime: Long = 0
-    private var endTime: Long = 0
 
     fun start() {
         startTime = System.currentTimeMillis()
