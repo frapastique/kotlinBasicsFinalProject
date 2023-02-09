@@ -3,8 +3,10 @@ var userName: String = ""
 var startTime: Long = 0
 var endTime: Long = 0
 
-var overallDamageGiven: Int = 0
-var overallDamageReceived: Int = 0
+var playTime: Long = 0
+
+var overallDamageGiven: Long = 0
+var overallDamageReceived: Long = 0
 var roomsCleared: Int = 0
 var bossRoomsCleared: Int = 0
 var defeatedSmallEnemies: Int = 0

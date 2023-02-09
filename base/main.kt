@@ -1,4 +1,4 @@
 fun main() {
-    /*intro()*/
+    intro()
     Game().startGame()
 }

@@ -111,7 +111,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
 
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
-            if (roomName == "Final Boss") {
+            if (roomName == "Boss Raum") {
                 println("\nDungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
                         " du hast das Spiel gewonnen!")
                 bossRoomsCleared++
@@ -147,6 +147,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                             "'Feuer Atem' und verursacht " + RED + dragonDamage + RESET + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
                         Thread.sleep(500)
+                        overallDamageReceived += dragonDamage
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)
                     }
                     println()

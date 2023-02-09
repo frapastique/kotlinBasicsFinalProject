@@ -56,6 +56,7 @@ fun intro() {
     userName = readln()
     println("\nHallo " + PURPLE + userName + RESET + "!\n\n" +
             "Willkommen zum Abschlussprojekt zum \"Modul 2: Kotlin Basics\" beim Syntax-Institut!\n\n")
+
     println("(Enter drücken um das Spiel zu starten)")
     readln()
 }
@@ -89,7 +90,9 @@ fun statistics(round: Int) {
                     - usedHealPotions.times(5)
                     - lostHeroes.times(50)
                     + revivedHeroes.times(25)
-            ).times(round)
+            ).times(round).toInt()
+
+    var userScore: Map<String, Int> = mapOf(userName to gameScore)
 
     println("""
         Statistik:
@@ -113,6 +116,8 @@ fun statistics(round: Int) {
         Wiederbelebungen:           $revivedHeroes
         
         Angriffsverstärkung:        $attackBoostPercent%
+        
+        Spiel Zeit:                 ${ProgramUsage().calculatePlayTime(playTime)}
         
         Spiel Wertung:              $gameScore
     """.trimIndent())

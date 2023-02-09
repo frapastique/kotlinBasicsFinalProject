@@ -106,17 +106,17 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     override fun useItem(item: Item): Boolean {
         if (item.name == "Manatrank" && this.manaPoints < 50) {
             this.manaPoints = 150
-            println("\nDie Mana von ${CYAN + this.name + RESET} wurde vollständig aufgefüllt.")
+            println("\nDie Mana von ${CYAN + this.name + RESET} wurde vollständig aufgefüllt.\n")
             return true
         } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
-            println("\nDer Held ${CYAN + this.name + RESET} hat aktuell ${PURPLE + this.manaPoints + RESET} das auffüllen lohnt sich nicht!")
+            println("\nDer Held ${CYAN + this.name + RESET} hat aktuell ${PURPLE + this.manaPoints + RESET} das auffüllen lohnt sich nicht!\n")
             return false
         } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("\nDer Held ${CYAN + this.name + RESET} wurde vollständig geheilt.")
+            println("\nDer Held ${CYAN + this.name + RESET} wurde vollständig geheilt.\n")
             return true
         } else {
-            println("\nDas Leben von ${CYAN + this.name + RESET} ist über die hälfte voll und wird somit nicht geheilt.")
+            println("\nDas Leben von ${CYAN + this.name + RESET} ist über die hälfte voll und wird somit nicht geheilt.\n")
             return false
         }
     }
