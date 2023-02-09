@@ -64,7 +64,8 @@ class Game {
                     startGame()
                 }
                 2 -> {
-                    println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!")
+                    println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!\n")
+                    statistics(this.round)
                     exitProcess(1)
                 }
             }

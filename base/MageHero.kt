@@ -76,6 +76,7 @@ class MageHero(name: String, hp: Int) : Hero (name, hp) {
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
         println("\n${CYAN + this.name + RESET} attackiert ${BLUE + target.name + RESET} mit '${attackName}' und verursacht ${RED + attackHP + RESET}HP schaden.")
+        overallDamageGiven += attackHP
         return attackHP
     }
 
@@ -149,6 +150,7 @@ class MageHero(name: String, hp: Int) : Hero (name, hp) {
                 continue
             } else {
                 currentHeroes.add(hero)
+                revivedHeroes++
                 println("${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
                         " von ${CYAN + this.name + RESET} wiederbelebt und ist nun wieder kampf tüchtig!\n")
                 Thread.sleep(500)

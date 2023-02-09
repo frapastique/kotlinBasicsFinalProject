@@ -114,9 +114,11 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
             if (roomName == "Final Boss") {
                 println("\nDungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
                         " du hast das Spiel gewonnen!")
+                bossRoomsCleared++
                 return true
             } else {
                 println("Alle Gegner Besiegt. Raum gesäubert!")
+                roomsCleared++
                 return true
             }
         }
@@ -169,6 +171,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 defender.printStatus()
                 Thread.sleep(500)
                 heroes.remove(defender)
+                lostHeroes++
             }
         }
     }

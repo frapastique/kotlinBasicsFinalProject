@@ -26,6 +26,7 @@ class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
     override fun printStatus(): Boolean {
         if (this.hpCurrent <= 0) {
             println("${BLUE + this.name + RESET} wurde besiegt!")
+            defeatedBosses++
             return true
         } else {
             println("Name: ${BLUE + this.name + RESET}")

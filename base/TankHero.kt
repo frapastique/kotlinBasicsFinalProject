@@ -42,6 +42,7 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
         println("\n${CYAN + this.name + RESET} attackiert ${BLUE + target.name + RESET} mit '${attackName}' und verursacht ${RED + attackHP + RESET}HP schaden.")
+        overallDamageGiven += attackHP
         return attackHP
     }
 

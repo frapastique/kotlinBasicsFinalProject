@@ -62,6 +62,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         val attackName: String = hitInfo.key
         val attackHP: Int = hitInfo.value.times(factor).toInt()
         println("\n${CYAN + this.name + RESET} attackiert ${BLUE + target.name + RESET} mit '${attackName}' und verursacht ${RED + attackHP + RESET}HP schaden.")
+        overallDamageGiven += attackHP
         return attackHP
     }
 
@@ -131,6 +132,7 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
 
     fun inspire(boostFactor: Double): Double {
         var faktor: Int = (1 .. 30).random()
+        attackBoostPercent += faktor
         println("\n${CYAN + this.name + RESET} motiviert:\n" +
                 PURPLE_BOLD + motivationQuote() + RESET + "\n" +
                 PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")

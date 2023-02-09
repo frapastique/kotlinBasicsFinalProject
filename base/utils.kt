@@ -75,3 +75,45 @@ fun motivationQuote(): String {
         return selectedQuote
     }
 }
+
+fun statistics(round: Int) {
+    var roomsClearedAll: Int = roomsCleared.plus(bossRoomsCleared)
+    var defeatedEnemies: Int = defeatedSmallEnemies.plus(defeatedBosses)
+    var gameScore: Int = (
+            overallDamageGiven.div(1000)
+                    - overallDamageReceived.div(1000)
+                    + roomsClearedAll.times(10)
+                    + defeatedSmallEnemies.times(2)
+                    + defeatedBosses.times(50)
+                    - usedManaPotions.times(2)
+                    - usedHealPotions.times(5)
+                    - lostHeroes.times(50)
+                    + revivedHeroes.times(25)
+            ).times(round)
+
+    println("""
+        Statistik:
+        Gespielte Dungeons:         $round
+        
+        Gesäuberte Reguläre Räume:  $roomsCleared
+        Gesäuberte Boss Räume:      $bossRoomsCleared
+        Insgesamt Gesäuberte Räume: $roomsClearedAll
+        
+        Besiegte Reguläre Gegner:   $defeatedSmallEnemies
+        Besiegte Drachen:           $defeatedBosses
+        Insgesamt Besiegte Gegner:  $defeatedEnemies
+        
+        Erlittener Schaden:         $overallDamageReceived
+        Ausgeteilter Schaden:       $overallDamageGiven
+        
+        Benutzte Heil tränke:       $usedHealPotions
+        Benutzte Mana Tränke:       $usedManaPotions
+        
+        Besiegte Helden:            $lostHeroes
+        Wiederbelebungen:           $revivedHeroes
+        
+        Angriffsverstärkung:        $attackBoostPercent%
+        
+        Spiel Wertung:              $gameScore
+    """.trimIndent())
+}
