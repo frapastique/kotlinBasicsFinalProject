@@ -7,12 +7,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="better statistics">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Dungeon.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ansiColors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/ansiColors.kt" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="fix some warnings">
+      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/BattleManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Combatant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Dungeon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Enemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Enemy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/FinalBoss.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/HealPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/HealPotion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Hero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/Input.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Inventory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/Inventory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/Item.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/LeadHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/MageHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/ManaPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/ManaPotion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/ProgramUsage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/ProgramUsage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/RangeHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Room.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/SmallEnemy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/TankHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/ansiColors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/ansiColors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/motivationQuotes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/motivationQuotes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/publicVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/publicVariables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +44,13 @@
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -103,14 +129,7 @@
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
       <workItem from="1675848250441" duration="17999000" />
-      <workItem from="1675930359941" duration="17564000" />
-    </task>
-    <task id="LOCAL-00010" summary="class Room, Door &amp;&amp; test, utils">
-      <created>1675351550276</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1675351550276</updated>
+      <workItem from="1675930359941" duration="17885000" />
     </task>
     <task id="LOCAL-00011" summary="class dungeon">
       <created>1675355500863</created>
@@ -448,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675952967242</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix some warnings">
+      <created>1675953674030</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1675953674030</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Battle Working" />
     <MESSAGE value="Battle Working (now)" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="add heroBoostFactor" />
@@ -491,7 +516,8 @@
     <MESSAGE value="motivation file rename" />
     <MESSAGE value="add statistics" />
     <MESSAGE value="better statistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="better statistics" />
+    <MESSAGE value="fix some warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some warnings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
