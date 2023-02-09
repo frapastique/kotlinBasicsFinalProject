@@ -7,12 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="MageHero revive() from game to MageHero class">
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="small fixes; code readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/BattleManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,21 +101,7 @@
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
       <workItem from="1675848250441" duration="17999000" />
-      <workItem from="1675930359941" duration="4634000" />
-    </task>
-    <task id="LOCAL-00003" summary="class Combatant add method">
-      <created>1675333943308</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1675333943308</updated>
-    </task>
-    <task id="LOCAL-00004" summary="class Hero">
-      <created>1675334079033</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1675334079033</updated>
+      <workItem from="1675930359941" duration="5742000" />
     </task>
     <task id="LOCAL-00005" summary="class Input &amp;&amp; LeadHero">
       <created>1675335102202</created>
@@ -449,7 +432,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675939145259</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="class Game add checkGameEnd()">
+      <created>1675940209082</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1675940209082</updated>
+    </task>
+    <task id="LOCAL-00053" summary="small fixes; code readability">
+      <created>1675940615100</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1675940615100</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,8 +464,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="part of motivateAll in LeadHero" />
-    <MESSAGE value="fighting possible" />
     <MESSAGE value="Boss Fight summon()" />
     <MESSAGE value="BattleManager choose who" />
     <MESSAGE value="BattleManager small fix" />
@@ -492,7 +487,9 @@
     <MESSAGE value="better console output" />
     <MESSAGE value="LeadHero inspire() from game to LeadHero class" />
     <MESSAGE value="MageHero revive() from game to MageHero class" />
-    <option name="LAST_COMMIT_MESSAGE" value="MageHero revive() from game to MageHero class" />
+    <MESSAGE value="class Game add checkGameEnd()" />
+    <MESSAGE value="small fixes; code readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes; code readability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -25,55 +25,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         ProgramUsage().start()
 
         do {
-            Thread.sleep(500)
-            for (enemyRound in this.enemies) {
-                var randomHero: Int = (0 .. heroes.size - 1).random()
-                this.hero = this.heroes[randomHero]
-                var enemyName = enemyRound.name
-                resolveAttack(enemyRound, this.hero!!)
-                if (endBattle()) {
-                    break
-                }
-                if (roomName == "Boss Raum" && enemyName == "Drache") {
-                    counterBossAttacks++
-                    if (counterBossAttacks == 4) {
-                        counterBossAttacks = 0
-                        var summonedEnemies = summon(counterBossAttacks, round)
-                        this.room.addEnemies(summonedEnemies)
-                        println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
-                        Thread.sleep(1000)
-                        break
-                    }
-                }
-            }
-
-            for (heroRound in this.heroes) {
-                heroRound.printStatus()
-                Thread.sleep(500)
-                if (heroRound.checkStats() && heroRound.chooseAction() && useItem(heroRound)) {
-                    heroRound.printStatus()
-                } else {
-                    if (this.enemies.size > 1) {
-                        println("\nWähle einen Gegner:")
-                        for (showEnemies in enemies) {
-                            var number: Int = enemies.indexOf(showEnemies) + 1
-                            println("($number) -> ${BLUE + showEnemies.name + RESET} mit " +
-                                    "${showEnemies.showStatsSmall()[1]}HP")
-                        }
-                        chooseEnemy()
-                        println()
-                        this.enemy!!.printStatus()
-                        heroRound.printStatus()
-                    } else {
-                        this.enemy = enemies.first()
-                        this.enemy!!.printStatus()
-                    }
-                    resolveAttack(heroRound, enemy!!)
-                    if (this.enemies.isEmpty()) {
-                        break
-                    }
-                }
-            }
+            enemyTurn()
+            heroTurn()
         } while (!endBattle())
 
         ProgramUsage().stop()
@@ -81,6 +34,60 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 "${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
 
         return this.heroes
+    }
+
+    private fun enemyTurn() {
+        Thread.sleep(500)
+        for (enemyRound in this.enemies) {
+            var randomHero: Int = (0 .. heroes.size - 1).random()
+            this.hero = this.heroes[randomHero]
+            var enemyName = enemyRound.name
+            resolveAttack(enemyRound, this.hero!!)
+            if (endBattle()) {
+                break
+            }
+            if (roomName == "Boss Raum" && enemyName == "Drache") {
+                counterBossAttacks++
+                if (counterBossAttacks == 4) {
+                    counterBossAttacks = 0
+                    var summonedEnemies = summon(counterBossAttacks, round)
+                    this.room.addEnemies(summonedEnemies)
+                    println("$enemyName hat ${summonedEnemies.size} Gegner Beschworen.\n")
+                    Thread.sleep(1000)
+                    break
+                }
+            }
+        }
+    }
+
+    private fun heroTurn() {
+        for (heroRound in this.heroes) {
+            heroRound.printStatus()
+            Thread.sleep(500)
+            if (heroRound.checkStats() && heroRound.chooseAction() && useItem(heroRound)) {
+                heroRound.printStatus()
+            } else {
+                if (this.enemies.size > 1) {
+                    println("\nWähle einen Gegner:")
+                    for (showEnemies in enemies) {
+                        var number: Int = enemies.indexOf(showEnemies) + 1
+                        println("($number) -> ${BLUE + showEnemies.name + RESET} mit " +
+                                "${showEnemies.showStatsSmall()[1]}HP")
+                    }
+                    chooseEnemy()
+                    println()
+                    this.enemy!!.printStatus()
+                    heroRound.printStatus()
+                } else {
+                    this.enemy = enemies.first()
+                    this.enemy!!.printStatus()
+                }
+                resolveAttack(heroRound, enemy!!)
+                if (this.enemies.isEmpty()) {
+                    break
+                }
+            }
+        }
     }
 
     private fun chooseEnemy() {
