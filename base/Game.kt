@@ -11,18 +11,18 @@ class Game {
     var dungeon: MutableList<Room> = Dungeon().generateRooms(round)
     var heroesList: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range, this.tank)
 
-    var currentHeroes: MutableList<Hero> = mutableListOf(this.lead, this.mage, this.range)
+    var currentHeroes: MutableList<Hero> = this.heroesList
     var heroBoostFactor: Double = 1.0
     var quantityForItems: Int = 2
 
     fun startGame() {
-        println("\n${WHITE_UNDERLINED}Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
+        println("\n${YELLOW_UNDERLINED}Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
         Thread.sleep(500)
         for (room in this.dungeon) {
             ProgramUsage().start()
             println("Helden:")
             for (hero in currentHeroes) {
-                Thread.sleep(500)
+                Thread.sleep(200)
                 hero.printStatus()
             }
             Thread.sleep(500)
@@ -37,25 +37,7 @@ class Game {
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
                 currentHeroes = this.mage.revive(this.heroesList, this.currentHeroes)
             }
-            if (room.roomName == "Boss Raum") {
-                println("\nMöchtest du noch eine Runde Spielen?")
-                println("""
-                    (1) -> Ja, neuen Dungeon spielen.
-                    (2) -> Nein, Spiel beenden.
-                """.trimIndent())
-                var input: Int = Input().checkInput()
-                when (input) {
-                    1 -> {
-                        round++
-                        restartGame(this.round)
-                        startGame()
-                    }
-                    2 -> {
-                        println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!")
-                        exitProcess(1)
-                    }
-                }
-            }
+            checkGameEnd(room.roomName)
             quantityForItems += (addItemCount.div(2))
             ProgramUsage().stop()
             println("Der ${room.roomName} wurde innerhalb ${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
@@ -67,6 +49,28 @@ class Game {
         this.currentHeroes = this.heroesList
         for (hero in heroesList) {
             hero.resetStats()
+        }
+    }
+
+    private fun checkGameEnd(roomName: String) {
+        if (roomName == "Boss Raum") {
+            println("\nMöchtest du noch eine Runde Spielen?")
+            println("""
+                    (1) -> Ja, neuen Dungeon spielen.
+                    (2) -> Nein, Spiel beenden.
+                """.trimIndent())
+            var input: Int = Input().checkInput()
+            when (input) {
+                1 -> {
+                    round++
+                    restartGame(this.round)
+                    startGame()
+                }
+                2 -> {
+                    println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!")
+                    exitProcess(1)
+                }
+            }
         }
     }
 }

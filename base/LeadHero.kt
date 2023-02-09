@@ -1,8 +1,8 @@
 class LeadHero(name: String, hp: Int): Hero(name, hp) {
     override var attacks: MutableMap<String, Int> = mutableMapOf(
         "Schwert" to 250,
-        "Axt" to 350,
-        "Eis" to 300,
+        "Axt" to 300,
+        "Eis" to 350,
         "Blitz" to 400,
         )
     override val hasMana: Boolean = true
