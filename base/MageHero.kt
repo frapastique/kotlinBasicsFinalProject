@@ -142,4 +142,18 @@ class MageHero(name: String, hp: Int) : Hero (name, hp) {
         this.manaPoints = 150
         this.hpCurrent = this.hp
     }
+
+    fun revive(heroesList: MutableList<Hero>, currentHeroes: MutableList<Hero>): MutableList<Hero> {
+        for (hero in heroesList) {
+            if (hero in currentHeroes) {
+                continue
+            } else {
+                currentHeroes.add(hero)
+                println("${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
+                        " von ${CYAN + this.name + RESET} wiederbelebt und ist nun wieder kampf tüchtig!\n")
+                Thread.sleep(500)
+            }
+        }
+        return currentHeroes
+    }
 }

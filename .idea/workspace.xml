@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="better console output">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="LeadHero inspire() from game to LeadHero class">
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/LeadHero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/MageHero.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +101,7 @@
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
       <workItem from="1675848250441" duration="17999000" />
-      <workItem from="1675930359941" duration="2691000" />
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1675333849399</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675333849399</updated>
+      <workItem from="1675930359941" duration="3393000" />
     </task>
     <task id="LOCAL-00002" summary="class Combatant">
       <created>1675333874900</created>
@@ -447,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675930509655</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="LeadHero inspire() from game to LeadHero class">
+      <created>1675938422885</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1675938422886</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +464,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TankHero fix" />
     <MESSAGE value="TankHero &amp;&amp; RangeHero fix" />
     <MESSAGE value="part of motivateAll in LeadHero" />
     <MESSAGE value="fighting possible" />
@@ -490,7 +488,8 @@
     <MESSAGE value="changed structure &amp;&amp; better console output" />
     <MESSAGE value="fix ProgramUsage" />
     <MESSAGE value="better console output" />
-    <option name="LAST_COMMIT_MESSAGE" value="better console output" />
+    <MESSAGE value="LeadHero inspire() from game to LeadHero class" />
+    <option name="LAST_COMMIT_MESSAGE" value="LeadHero inspire() from game to LeadHero class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
