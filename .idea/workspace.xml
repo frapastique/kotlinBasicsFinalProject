@@ -2,36 +2,17 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="fix some warnings">
-      <change beforePath="$PROJECT_DIR$/base/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/BattleManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Combatant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Combatant.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Dungeon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Dungeon.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Enemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Enemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/FinalBoss.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/FinalBoss.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/HealPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/HealPotion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Hero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Input.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/Input.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Inventory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/Inventory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/Item.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/LeadHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/LeadHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/MageHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/MageHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ManaPotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/inventory/ManaPotion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ProgramUsage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/ProgramUsage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/RangeHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/RangeHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Room.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Room.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/SmallEnemy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/SmallEnemy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/TankHero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/TankHero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/ansiColors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/ansiColors.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/motivationQuotes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/motivationQuotes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/publicVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/publicVariables.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils/utils.kt" afterDir="false" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="package management">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/combatant/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Hero.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/game/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/BattleManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Game.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,31 +46,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/base/utils" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
       <recent name="" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="game" />
+      <recent name="combatant" />
+      <recent name="inventory" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="" />
@@ -129,21 +116,9 @@
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
       <workItem from="1675848250441" duration="17999000" />
-      <workItem from="1675930359941" duration="17885000" />
-    </task>
-    <task id="LOCAL-00011" summary="class dungeon">
-      <created>1675355500863</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1675355500863</updated>
-    </task>
-    <task id="LOCAL-00012" summary="override toString">
-      <created>1675358068515</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675358068515</updated>
+      <workItem from="1675930359941" duration="18866000" />
+      <workItem from="1675954987367" duration="3120000" />
+      <workItem from="1675965552405" duration="4744000" />
     </task>
     <task id="LOCAL-00013" summary="merge generateSmallEnemy with generateName, generateHP, generateAttacks">
       <created>1675359202857</created>
@@ -474,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675953674030</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="package management">
+      <created>1675954005334</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1675954005334</updated>
+    </task>
+    <task id="LOCAL-00061" summary="package management">
+      <created>1675954011316</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1675954011316</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Battle Working (now)" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="add heroBoostFactor" />
     <MESSAGE value="heroBoostFactor fix" />
@@ -517,7 +505,8 @@
     <MESSAGE value="add statistics" />
     <MESSAGE value="better statistics" />
     <MESSAGE value="fix some warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix some warnings" />
+    <MESSAGE value="package management" />
+    <option name="LAST_COMMIT_MESSAGE" value="package management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

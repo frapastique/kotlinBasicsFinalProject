@@ -21,7 +21,7 @@ class Game {
     var quantityForItems: Int = 2
 
     fun startGame() {
-        println("\n${YELLOW_UNDERLINED}Du betrittst einen game.Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
+        println("\n${YELLOW_UNDERLINED}Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
         Thread.sleep(500)
         for (room in this.dungeon) {
             println("Helden:")
@@ -58,7 +58,7 @@ class Game {
         if (roomName == "Boss Raum") {
             println("\nMöchtest du noch eine Runde Spielen?")
             println("""
-                    (1) -> Ja, neuen game.Dungeon spielen.
+                    (1) -> Ja, neuen Dungeon spielen.
                     (2) -> Nein, Spiel beenden.
                 """.trimIndent())
             var input: Int = Input().checkInput()

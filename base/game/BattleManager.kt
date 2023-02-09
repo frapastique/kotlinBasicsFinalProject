@@ -69,8 +69,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         for (heroRound in this.heroes) {
             heroRound.printStatus()
             Thread.sleep(500)
-            if (heroRound.checkStats() && heroRound.chooseAction() && useItem(heroRound)) {
+            if (heroRound.checkStats() && heroRound.chooseAction() && heroRound.chooseItem(this.inventory, heroRound)) {
                 heroRound.printStatus()
+                println()
             } else {
                 if (this.enemies.size > 1) {
                     println("\nWähle einen Gegner:")
@@ -81,10 +82,11 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                     }
                     chooseEnemy()
                     println()
-                    this.enemy!!.printStatus()
                     heroRound.printStatus()
+                    this.enemy!!.printStatus()
                 } else {
                     this.enemy = enemies.first()
+                    println()
                     this.enemy!!.printStatus()
                 }
                 resolveAttack(heroRound, enemy!!)
@@ -108,7 +110,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             if (roomName == "Boss Raum") {
-                println("\ngame.Dungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
+                println("\nDungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
                         " du hast das Spiel gewonnen!")
                 bossRoomsCleared++
                 return true
@@ -167,41 +169,6 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 Thread.sleep(500)
                 heroes.remove(defender)
                 lostHeroes++
-            }
-        }
-    }
-
-    private fun useItem(hero: Hero): Boolean {
-        println("\nWähle ein inventory.Item:")
-        var k: Int = 1
-        for (element in this.inventory.items) {
-            println("""
-                ($k) -> ${element.name}
-                       ${element.quantity} im Inventar
-                       ${element.description}
-                        """.trimIndent())
-            k++
-        }
-        println("(3) -> Inventar schließen und attackieren")
-        when (Input().checkInput()) {
-            1 -> {
-                if (this.inventory.useItem(inventory.items[0], hero)) {
-                    return true
-                } else {
-                    return useItem(hero)
-                }
-            }
-            2 -> {
-                if (this.inventory.useItem(inventory.items[1], hero)) {
-                    return true
-                } else {
-                    return useItem(hero)
-                }
-            }
-            3 -> return false
-            else -> {
-                println("Eingabe nicht möglich.")
-                return useItem(hero)
             }
         }
     }
