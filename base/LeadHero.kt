@@ -128,4 +128,12 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         this.manaPoints = 150
         this.hpCurrent = this.hp
     }
+
+    fun inspire(boostFactor: Double): Double {
+        var faktor: Int = (1 .. 30).random()
+        println("\n${CYAN + this.name + RESET} motiviert:\n" +
+                PURPLE_BOLD + motivationQuote() + RESET + "\n" +
+                PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
+        return boostFactor + (faktor / 100.0)
+    }
 }

@@ -31,11 +31,7 @@ class Game {
             this.currentHeroes = BattleManager(room, this.currentHeroes, this.heroBoostFactor, currentInventory, this.round).startBattle()
             Thread.sleep(1000)
             if (this.lead in this.currentHeroes) {
-                var faktor: Int = (1 .. 30).random()
-                heroBoostFactor += (faktor / 100.0)
-                println("\n${CYAN + this.lead.name + RESET} motiviert:\n" +
-                        PURPLE_BOLD + motivationQuote() + RESET + "\n" +
-                        PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
+                heroBoostFactor = this.lead.inspire(heroBoostFactor)
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {
