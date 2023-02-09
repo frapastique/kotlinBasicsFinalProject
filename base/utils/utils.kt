@@ -65,7 +65,7 @@ fun intro() {
     println("\nHallo " + PURPLE + userName + RESET + "!\n\n" +
             "Willkommen zum Abschlussprojekt zum \"Modul 2: Kotlin Basics\" beim Syntax-Institut!\n\n")
 
-    println("(Enter drücken um das Spiel zu starten)")
+    println("Drücke Enter um den Dungeon Crawler zu starten!")
     readln()
 }
 
@@ -99,8 +99,6 @@ fun statistics(round: Int) {
                     - lostHeroes.times(50)
                     + revivedHeroes.times(25)
             ).times(round).toInt()
-
-    var userScore: Map<String, Int> = mapOf(userName to gameScore)
 
     println("""
         Statistik:

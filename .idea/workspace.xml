@@ -8,12 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="package management">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/combatant/Hero.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/combatant/Hero.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/game/BattleManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/BattleManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/game/Game.kt" afterDir="false" />
-    </list>
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="package management" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +94,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.TestKt" />
+        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.TestKt" />
       </list>
