@@ -10,7 +10,8 @@
     <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="better console output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/ProgramUsage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/ProgramUsage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/publicVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/base/publicVariables.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TestKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="FinalFinalProject" />
@@ -85,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.TestKt" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.TestKt" />
       </list>
     </recent_temporary>
   </component>
@@ -101,7 +102,7 @@
       <workItem from="1675329487285" duration="31045000" />
       <workItem from="1675675583946" duration="28401000" />
       <workItem from="1675758079735" duration="36951000" />
-      <workItem from="1675848250441" duration="15263000" />
+      <workItem from="1675848250441" duration="17999000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1675333849399</created>
@@ -432,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675864459426</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="better console output">
+      <created>1675869904327</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1675869904327</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

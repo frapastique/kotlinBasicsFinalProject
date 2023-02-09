@@ -17,7 +17,6 @@ var listOfMotivationQuotes: MutableList<String> = mutableListOf(
     "Ein erfolgreiches Leben beginnt mit einer klaren Vision und dem Mut, sie zu verfolgen",
     "Das größte Hindernis auf dem Weg zum Erfolg ist die Angst vor dem Scheitern.",
     "Der erste und wichtigste Schritt zum Erfolg ist die Entscheidung, ihn zu wollen.",
-    "Ändere deine Gedanken, ändere dein Leben.",
     "Harte Arbeit besiegt das Talent, wenn das Talent nicht hart arbeitet.",
     "Lass deine Träume größer sein als deine Ängste.",
     "Werde nicht müde, gute Dinge zu tun, denn bald wirst du die Früchte ernten.",

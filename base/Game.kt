@@ -35,7 +35,7 @@ class Game {
                 heroBoostFactor += (faktor / 100.0)
                 println("\n${CYAN + this.lead.name + RESET} motiviert:\n" +
                         PURPLE_BOLD + motivationQuote() + RESET + "\n" +
-                        PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
+                        PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
             }
             Thread.sleep(1000)
             if (this.mage in currentHeroes && currentHeroes.size < this.heroesList.size) {

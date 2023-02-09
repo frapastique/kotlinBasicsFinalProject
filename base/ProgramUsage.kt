@@ -17,11 +17,11 @@ class ProgramUsage {
         val seconds = MILLISECONDS.toSeconds(elapsedTime) % 60
 
         val result = if (hours > 0) {
-            String.format("%02d:%02d:%02d", hours, minutes, seconds)
+            String.format("%02d:%02d:%02d", hours, minutes, seconds) + " Stunden"
         } else if (minutes > 0) {
-            String.format("%02d:%02d", minutes, seconds)
+            String.format("%02d:%02d", minutes, seconds) + " Minuten"
         } else {
-            String.format("%02d", seconds)
+            String.format("%02d", seconds) + " Sekunden"
         }
 
         return result
