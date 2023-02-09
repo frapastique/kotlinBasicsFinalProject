@@ -1,3 +1,5 @@
+package utils
+
 class Input {
     fun checkInput(): Int {
         print("Deine Entscheidung: ")

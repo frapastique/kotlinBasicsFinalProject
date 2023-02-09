@@ -1,3 +1,7 @@
+package game
+
+import combatant.Enemy
+
 class Room(var roomName: String, var enemies: MutableList<Enemy>) {
     override fun toString(): String {
         Thread.sleep(500)

@@ -1,3 +1,7 @@
+package inventory
+
+import combatant.Hero
+
 class Inventory(var items: MutableList<Item>) {
 
     fun removeItem(item: Item) {

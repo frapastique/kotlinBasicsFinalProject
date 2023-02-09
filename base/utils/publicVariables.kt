@@ -1,3 +1,5 @@
+package utils
+
 var userName: String = ""
 
 var startTime: Long = 0

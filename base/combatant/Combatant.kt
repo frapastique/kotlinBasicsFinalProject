@@ -1,3 +1,5 @@
+package combatant
+
 abstract class Combatant(var name: String, var hp: Int) {
     abstract val attacks: Map<String, Int>
 

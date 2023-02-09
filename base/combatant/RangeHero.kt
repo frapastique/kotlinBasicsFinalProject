@@ -1,3 +1,16 @@
+package combatant
+
+import utils.BLUE
+import utils.CYAN
+import utils.GREEN
+import utils.Input
+import utils.PURPLE
+import utils.RED
+import utils.RESET
+import utils.YELLOW
+import inventory.Item
+import utils.overallDamageGiven
+
 class RangeHero(name: String, hp: Int) : Hero(name, hp) {
     override var attacks: MutableMap<String, Int> = mutableMapOf(
         "Pfeil" to 150,

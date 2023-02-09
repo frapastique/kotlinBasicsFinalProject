@@ -1,3 +1,11 @@
+package game
+
+import combatant.Combatant
+import combatant.Enemy
+import combatant.Hero
+import inventory.Inventory
+import utils.*
+
 class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoostFactor: Double, var inventory: Inventory, var round: Int) {
     var roomName = this.room.roomName
     var enemies: MutableList<Enemy> = this.room.enemies
@@ -100,7 +108,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             if (roomName == "Boss Raum") {
-                println("\nDungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
+                println("\ngame.Dungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
                         " du hast das Spiel gewonnen!")
                 bossRoomsCleared++
                 return true
@@ -164,7 +172,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     }
 
     private fun useItem(hero: Hero): Boolean {
-        println("\nWähle ein Item:")
+        println("\nWähle ein inventory.Item:")
         var k: Int = 1
         for (element in this.inventory.items) {
             println("""

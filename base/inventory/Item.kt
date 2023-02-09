@@ -1,3 +1,9 @@
+package inventory
+
+import combatant.Hero
+import utils.usedHealPotions
+import utils.usedManaPotions
+
 open class Item(var name: String, var description: String, var quantity: Int) {
 
     fun decreaseQuantity() {

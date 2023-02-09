@@ -1,3 +1,5 @@
+package utils
+
 var listOfMotivationQuotes: MutableList<String> = mutableListOf(
     "Erfolg ist kein Zufall, sondern das Ergebnis harter Arbeit und Entschlossenheit.",
     "Glück ist, was passiert, wenn Vorbereitung auf Gelegenheit trifft.",

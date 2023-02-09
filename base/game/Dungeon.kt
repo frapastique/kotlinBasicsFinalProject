@@ -1,3 +1,10 @@
+package game
+
+import combatant.Enemy
+import combatant.FinalBoss
+import inventory.Item
+import utils.generateSmallEnemy
+
 class Dungeon {
     private var rooms: MutableList<Room> = mutableListOf()
 

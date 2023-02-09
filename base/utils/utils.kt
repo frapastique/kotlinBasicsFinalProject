@@ -1,3 +1,11 @@
+package utils
+
+import combatant.Enemy
+import combatant.SmallEnemy
+import inventory.HealPotion
+import inventory.Item
+import inventory.ManaPotion
+
 fun generateSmallEnemy(count: Int, round: Int): MutableList<Enemy> {
     var enemiesList: MutableList<Enemy> = mutableListOf()
 

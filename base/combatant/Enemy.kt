@@ -1,3 +1,11 @@
+package combatant
+
+import utils.BLUE
+import utils.CYAN
+import utils.RED
+import utils.RESET
+import utils.overallDamageReceived
+
 abstract class Enemy(name: String, hp: Int) : Combatant(name, hp) {
     override fun attack(target: Combatant, factor: Double): Int {
         var attack: String = this.attacks.entries.random().key

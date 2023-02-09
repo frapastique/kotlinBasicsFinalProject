@@ -1,10 +1,15 @@
+package combatant
+
+import utils.Input
+import inventory.Item
+
 abstract class Hero(name: String, hp: Int) : Combatant(name, hp) {
     open val hasMana: Boolean = false
 
     fun chooseAction(): Boolean {
         println("""
             Wähle eine Aktion:
-            (1) -> Item nutzen
+            (1) -> inventory.Item nutzen
             (2) -> Attackieren
         """.trimIndent())
         when (Input().checkInput()) {

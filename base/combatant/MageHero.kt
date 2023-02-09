@@ -1,27 +1,50 @@
-class LeadHero(name: String, hp: Int): Hero(name, hp) {
-    override var attacks: MutableMap<String, Int> = mutableMapOf(
-        "Schwert" to 250,
-        "Axt" to 300,
-        "Eis" to 350,
-        "Blitz" to 400,
+package combatant
+
+import utils.BLUE
+import utils.CYAN
+import utils.CYAN_BOLD_BRIGHT
+import utils.GREEN
+import utils.Input
+import utils.PURPLE
+import utils.RED
+import utils.RESET
+import utils.YELLOW
+import inventory.Item
+import utils.overallDamageGiven
+import utils.revivedHeroes
+
+class MageHero(name: String, hp: Int) : Hero(name, hp) {
+    override var attacks: Map<String, Int> = mutableMapOf(
+        "Dolch" to 150,
+        "Betäubung" to 200,
+        "Eis" to 250,
+        "Blitz" to 350,
         )
     override val hasMana: Boolean = true
     var hpCurrent: Int = this.hp
-    var manaPoints: Int = 150
+    var manaPoints: Int = 250
 
     override fun attack(target: Combatant, factor: Double): Int {
         println("\nWähle eine attacke:")
         var j: Int = 1
-        val ice: String = this.attacks.entries.elementAt(2).key
-        val bolt: String = this.attacks.entries.elementAt(3).key
+        var stun: String = this.attacks.entries.elementAt(1).key
+        var ice: String = this.attacks.entries.elementAt(2).key
+        var bolt: String = this.attacks.entries.elementAt(3).key
         for (entry in attacks) {
             var attackName: String = entry.key
             var attackHP: Int = (entry.value.times(factor)).toInt()
             print("($j) -> ${attackHP}HP mit $attackName")
-            if (entry.key == ice)
-                print(" (Mana -20)")
-            if (entry.key == bolt)
-                print(" (Mana -50)")
+            when (entry.key) {
+                stun -> {
+                    print(" (Mana -10)")
+                }
+                ice -> {
+                    print(" (Mana -15)")
+                }
+                bolt -> {
+                    print(" (Mana -40)")
+                }
+            }
             j++
             println()
         }
@@ -30,11 +53,17 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
                 return attacking(input - 1, target, factor)
             }
             2 -> {
-                return attacking(input - 1, target, factor)
+                if (this.manaPoints >= 10) {
+                    this.manaPoints -= 10
+                    return attacking(input - 1, target, factor)
+                } else {
+                    println("Nicht genug Mana. Wähle eine andere Attacke.")
+                    return attack(target, factor)
+                }
             }
             3 -> {
-                if (this.manaPoints >= 20) {
-                    this.manaPoints -= 20
+                if (this.manaPoints >= 15) {
+                    this.manaPoints -= 15
                     return attacking(input - 1, target, factor)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
@@ -42,8 +71,8 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
                 }
             }
             4 -> {
-                if (this.manaPoints >= 50) {
-                    this.manaPoints -= 50
+                if (this.manaPoints >= 40) {
+                    this.manaPoints -= 40
                     return attacking(input - 1, target, factor)
                 } else {
                     println("Nicht genug Mana. Wähle eine andere Attacke.")
@@ -104,25 +133,25 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
     }
 
     override fun useItem(item: Item): Boolean {
-        if (item.name == "Manatrank" && this.manaPoints < 50) {
-            this.manaPoints = 150
-            println("\nDie Mana von ${CYAN + this.name + RESET} wurde vollständig aufgefüllt.\n")
+        if (item.name == "Manatrank" && this.manaPoints < 40) {
+            this.manaPoints = 250
+            println("\nDie Mana von ${this.name} wurde vollständig aufgefüllt.\n")
             return true
-        } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
-            println("\nDer Held ${CYAN + this.name + RESET} hat aktuell ${PURPLE + this.manaPoints + RESET} das auffüllen lohnt sich nicht!\n")
+        } else if (item.name == "Manatrank" && this.manaPoints > 40) {
+            println("\nDer Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!\n")
             return false
         } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("\nDer Held ${CYAN + this.name + RESET} wurde vollständig geheilt.\n")
+            println("\nDer Held ${this.name} wurde vollständig geheilt.\n")
             return true
         } else {
-            println("\nDas Leben von ${CYAN + this.name + RESET} ist über die hälfte voll und wird somit nicht geheilt.\n")
+            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.\n")
             return false
         }
     }
 
     override fun checkStats(): Boolean {
-        return (this.hpCurrent <= this.hp.div(2) || this.manaPoints < 50)
+        return (this.hpCurrent <= this.hp.div(2) || this.manaPoints < 40)
     }
 
     override fun resetStats() {
@@ -130,12 +159,18 @@ class LeadHero(name: String, hp: Int): Hero(name, hp) {
         this.hpCurrent = this.hp
     }
 
-    fun inspire(boostFactor: Double): Double {
-        var faktor: Int = (1 .. 30).random()
-        attackBoostPercent += faktor
-        println("\n${CYAN + this.name + RESET} motiviert:\n" +
-                PURPLE_BOLD + motivationQuote() + RESET + "\n" +
-                PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
-        return boostFactor + (faktor / 100.0)
+    fun revive(heroesList: MutableList<Hero>, currentHeroes: MutableList<Hero>): MutableList<Hero> {
+        for (hero in heroesList) {
+            if (hero in currentHeroes) {
+                continue
+            } else {
+                currentHeroes.add(hero)
+                revivedHeroes++
+                println("${CYAN_BOLD_BRIGHT + hero.name + RESET} wurde mit ${GREEN + hero.hp + RESET}HP" +
+                        " von ${CYAN + this.name + RESET} wiederbelebt und ist nun wieder kampf tüchtig!\n")
+                Thread.sleep(500)
+            }
+        }
+        return currentHeroes
     }
 }

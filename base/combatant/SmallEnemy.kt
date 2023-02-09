@@ -1,3 +1,12 @@
+package combatant
+
+import utils.BLUE
+import utils.GREEN
+import utils.RED
+import utils.RESET
+import utils.YELLOW
+import utils.defeatedSmallEnemies
+
 class SmallEnemy(name: String, hp: Int, override var attacks: Map<String, Int>) : Enemy(name, hp) {
     private var hpCurrent: Int = this.hp
 

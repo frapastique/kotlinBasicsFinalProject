@@ -1,3 +1,12 @@
+package combatant
+
+import utils.BLUE
+import utils.GREEN
+import utils.RED
+import utils.RESET
+import utils.YELLOW
+import utils.defeatedBosses
+
 class FinalBoss(name: String, hp: Int) : Enemy(name, hp) {
     override val attacks: MutableMap<String, Int> = mutableMapOf(
         "Flügelschlag" to 100,

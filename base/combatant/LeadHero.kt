@@ -1,19 +1,46 @@
-class TankHero(name: String, hp: Int): Hero(name, hp) {
+package combatant
+
+import utils.BLACK
+import utils.BLUE
+import utils.CYAN
+import utils.GREEN
+import utils.Input
+import utils.PURPLE
+import utils.PURPLE_BACKGROUND
+import utils.PURPLE_BOLD
+import utils.PURPLE_UNDERLINED
+import utils.RED
+import utils.RESET
+import utils.YELLOW
+import utils.attackBoostPercent
+import inventory.Item
+import utils.motivationQuote
+import utils.overallDamageGiven
+
+class LeadHero(name: String, hp: Int): Hero(name, hp) {
     override var attacks: MutableMap<String, Int> = mutableMapOf(
         "Schwert" to 250,
         "Axt" to 300,
-        "Sprung Schwert" to 350,
-        "Sprung Axt" to 400,
-    )
+        "Eis" to 350,
+        "Blitz" to 400,
+        )
+    override val hasMana: Boolean = true
     var hpCurrent: Int = this.hp
+    var manaPoints: Int = 150
 
     override fun attack(target: Combatant, factor: Double): Int {
         println("\nWähle eine attacke:")
         var j: Int = 1
+        val ice: String = this.attacks.entries.elementAt(2).key
+        val bolt: String = this.attacks.entries.elementAt(3).key
         for (entry in attacks) {
             var attackName: String = entry.key
             var attackHP: Int = (entry.value.times(factor)).toInt()
             print("($j) -> ${attackHP}HP mit $attackName")
+            if (entry.key == ice)
+                print(" (Mana -20)")
+            if (entry.key == bolt)
+                print(" (Mana -50)")
             j++
             println()
         }
@@ -25,10 +52,22 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
                 return attacking(input - 1, target, factor)
             }
             3 -> {
-                return attacking(input - 1, target, factor)
+                if (this.manaPoints >= 20) {
+                    this.manaPoints -= 20
+                    return attacking(input - 1, target, factor)
+                } else {
+                    println("Nicht genug Mana. Wähle eine andere Attacke.")
+                    return attack(target, factor)
+                }
             }
             4 -> {
-                return attacking(input - 1, target, factor)
+                if (this.manaPoints >= 50) {
+                    this.manaPoints -= 50
+                    return attacking(input - 1, target, factor)
+                } else {
+                    println("Nicht genug Mana. Wähle eine andere Attacke.")
+                    return attack(target, factor)
+                }
             }
             else -> {
                 println("Eingabe nicht möglich. Versuche erneut!")
@@ -74,30 +113,48 @@ class TankHero(name: String, hp: Int): Hero(name, hp) {
             } else {
                 println("HP:   ${RED + this.hpCurrent + RESET}")
             }
+            println("Mana: ${PURPLE + this.manaPoints + RESET}")
         }
         return false
     }
 
     override fun showStatsSmall(): List<Any> {
-        return listOf(this.name, this.hpCurrent)
+        return listOf(this.name, this.hpCurrent, this.manaPoints)
     }
 
     override fun useItem(item: Item): Boolean {
-        if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
+        if (item.name == "Manatrank" && this.manaPoints < 50) {
+            this.manaPoints = 150
+            println("\nDie Mana von ${CYAN + this.name + RESET} wurde vollständig aufgefüllt.\n")
+            return true
+        } else if (item.name == "Manatrank" && this.manaPoints >= 50) {
+            println("\nDer Held ${CYAN + this.name + RESET} hat aktuell ${PURPLE + this.manaPoints + RESET} das auffüllen lohnt sich nicht!\n")
+            return false
+        } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
-            println("\nDer Held ${this.name} wurde vollständig geheilt.\n")
+            println("\nDer Held ${CYAN + this.name + RESET} wurde vollständig geheilt.\n")
             return true
         } else {
-            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.\n")
+            println("\nDas Leben von ${CYAN + this.name + RESET} ist über die hälfte voll und wird somit nicht geheilt.\n")
             return false
         }
     }
 
     override fun checkStats(): Boolean {
-        return this.hpCurrent <= this.hp.div(2)
+        return (this.hpCurrent <= this.hp.div(2) || this.manaPoints < 50)
     }
 
     override fun resetStats() {
+        this.manaPoints = 150
         this.hpCurrent = this.hp
+    }
+
+    fun inspire(boostFactor: Double): Double {
+        var faktor: Int = (1 .. 30).random()
+        attackBoostPercent += faktor
+        println("\n${CYAN + this.name + RESET} motiviert:\n" +
+                PURPLE_BOLD + motivationQuote() + RESET + "\n" +
+                PURPLE_BACKGROUND + PURPLE_UNDERLINED + BLACK + "Alle Angriffe um $faktor% erhöht!" + RESET + "\n")
+        return boostFactor + (faktor / 100.0)
     }
 }
