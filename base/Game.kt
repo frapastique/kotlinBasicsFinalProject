@@ -49,7 +49,7 @@ class Game {
         }
     }
 
-    private fun checkGameEnd(roomName: String) {
+    fun checkGameEnd(roomName: String) {
         if (roomName == "Boss Raum") {
             println("\nMöchtest du noch eine Runde Spielen?")
             println("""
@@ -69,6 +69,12 @@ class Game {
                     exitProcess(1)
                 }
             }
+        }
+
+        if (this.currentHeroes.isEmpty()) {
+            println("\nDanke für Spielen ${PURPLE + userName + RESET} und bis zum nächsten Mal!\n")
+            statistics(this.round)
+            exitProcess(1)
         }
     }
 }

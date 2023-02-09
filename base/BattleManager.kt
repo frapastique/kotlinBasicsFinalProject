@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoostFactor: Double, var inventory: Inventory, var round: Int) {
     var roomName = this.room.roomName
     var enemies: MutableList<Enemy> = this.room.enemies
@@ -29,7 +27,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         } while (!endBattle())
         ProgramUsage().stop()
 
-        println("Der ${room.roomName} wurde innerhalb " +
+        println("Der $roomName wurde innerhalb " +
                 "${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
 
         return this.heroes
@@ -99,16 +97,6 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         }
     }
 
-    private fun chooseHero() {
-        val input: Int = Input().checkInput()
-        if (input in 1 .. heroes.size) {
-            hero = heroes[input - 1]
-        } else {
-            println("Eingabe nicht möglich. Versuche erneut.")
-            chooseHero()
-        }
-    }
-
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             if (roomName == "Boss Raum") {
@@ -124,9 +112,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         }
 
         if (heroes.isEmpty()) {
-            println("\nAlle deine Helden wurden besiegt. Du hast verloren! " +
-                    "Danke fürs spielen ${PURPLE + userName + RESET}")
-            exitProcess(1)
+            Game().checkGameEnd(this.roomName)
         }
         return false
     }

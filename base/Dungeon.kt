@@ -1,5 +1,5 @@
 class Dungeon {
-    var rooms: MutableList<Room> = mutableListOf()
+    private var rooms: MutableList<Room> = mutableListOf()
 
     override fun toString(): String {
         var info = StringBuilder()
