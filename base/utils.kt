@@ -61,8 +61,17 @@ fun intro() {
 }
 
 fun motivationQuote(): String {
-    var selectedQuote: String = listOfMotivationQuotes.random()
-    listOfMotivationQuotes.remove(selectedQuote)
+    var selectedQuote: String
 
-    return selectedQuote
+    if (listOfMotivationQuotes.isNotEmpty()) {
+        selectedQuote = listOfMotivationQuotes.random()
+        listOfMotivationQuotes.remove(selectedQuote)
+        listOfMotivationQuotesDump.add(selectedQuote)
+        return selectedQuote
+    } else {
+        selectedQuote = listOfMotivationQuotesDump.random()
+        listOfMotivationQuotesDump.remove(selectedQuote)
+        listOfMotivationQuotes.add(selectedQuote)
+        return selectedQuote
+    }
 }

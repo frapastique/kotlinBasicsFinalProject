@@ -23,13 +23,12 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         println()
 
         ProgramUsage().start()
-
         do {
             enemyTurn()
             heroTurn()
         } while (!endBattle())
-
         ProgramUsage().stop()
+
         println("Der ${room.roomName} wurde innerhalb " +
                 "${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
 
@@ -113,7 +112,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
     private fun endBattle(): Boolean {
         if (enemies.isEmpty()) {
             if (roomName == "Final Boss") {
-                println("\nDungeon gesäubert! Gratuliere du hast das Spiel gewonnen!")
+                println("\nDungeon gesäubert! Gratuliere ${PURPLE + userName + RESET}," +
+                        " du hast das Spiel gewonnen!")
                 return true
             } else {
                 println("Alle Gegner Besiegt. Raum gesäubert!")
@@ -141,8 +141,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 var damageCode: Int = attacker.attack(defender, 1.0)
                 if (damageCode == 7777) {
                     var dragonDamage = 250
-                    println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff " +
-                            "'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
+                    println("${BLUE + attacker.name + RESET} attackiert die Helden Truppe mit Flächenangriff " +
+                            "'Feuer Atem' und verursacht " + RED + dragonDamage + RESET + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
                         Thread.sleep(500)
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)
@@ -159,6 +159,7 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 println()
             }
         }
+
         if (defender.checkDefeat(defender.showStatsSmall()[1])) {
             if (defender == enemy) {
                 defender.printStatus()
