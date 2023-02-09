@@ -21,6 +21,9 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
             showEnemies.printStatus()
         }
         println()
+
+        ProgramUsage().start()
+
         do {
             Thread.sleep(500)
             for (enemyRound in this.enemies) {
@@ -54,7 +57,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                         println("\nWähle einen Gegner:")
                         for (showEnemies in enemies) {
                             var number: Int = enemies.indexOf(showEnemies) + 1
-                            println("($number) -> ${BLUE + showEnemies.name + RESET} mit ${showEnemies.showStatsSmall()[1]}HP")
+                            println("($number) -> ${BLUE + showEnemies.name + RESET} mit " +
+                                    "${showEnemies.showStatsSmall()[1]}HP")
                         }
                         chooseEnemy()
                         println()
@@ -71,6 +75,11 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 }
             }
         } while (!endBattle())
+
+        ProgramUsage().stop()
+        println("Der ${room.roomName} wurde innerhalb " +
+                "${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
+
         return this.heroes
     }
 
@@ -106,7 +115,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
         }
 
         if (heroes.isEmpty()) {
-            println("\nAlle deine Helden wurden besiegt. Du hast verloren!")
+            println("\nAlle deine Helden wurden besiegt. Du hast verloren! " +
+                    "Danke fürs spielen ${PURPLE + userName + RESET}")
             exitProcess(1)
         }
         return false
@@ -124,7 +134,8 @@ class BattleManager(var room: Room, var heroes: MutableList<Hero>, var heroBoost
                 var damageCode: Int = attacker.attack(defender, 1.0)
                 if (damageCode == 7777) {
                     var dragonDamage = 250
-                    println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff 'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
+                    println("${attacker.name} attackiert die Helden Truppe mit Flächenangriff " +
+                            "'Feuer Atem' und verursacht " + dragonDamage + "HP schaden.")
                     for (heroAreaDamage in this.heroes) {
                         Thread.sleep(500)
                         heroAreaDamage.takeDamage(dragonDamage, 1.0)

@@ -19,7 +19,6 @@ class Game {
         println("\n${YELLOW_UNDERLINED}Du betrittst einen Dungeon mit ${this.dungeon.size} Räumen.$RESET\n")
         Thread.sleep(500)
         for (room in this.dungeon) {
-            ProgramUsage().start()
             println("Helden:")
             for (hero in currentHeroes) {
                 Thread.sleep(200)
@@ -39,8 +38,6 @@ class Game {
             }
             checkGameEnd(room.roomName)
             quantityForItems += (addItemCount.div(2))
-            ProgramUsage().stop()
-            println("Der ${room.roomName} wurde innerhalb ${PURPLE + ProgramUsage().getElapsedTime() + RESET} gemeistert.\n")
         }
     }
 
