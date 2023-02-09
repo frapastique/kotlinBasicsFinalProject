@@ -8,7 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="package management" />
+    <list default="true" id="9d0629c4-3863-4d61-83a0-b0dc7a3ebc61" name="Changes" comment="presentation version">
+      <change afterPath="$PROJECT_DIR$/base/ClassDiagramFullProject.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,13 +120,6 @@
       <workItem from="1675930359941" duration="18866000" />
       <workItem from="1675954987367" duration="3120000" />
       <workItem from="1675965552405" duration="4744000" />
-    </task>
-    <task id="LOCAL-00013" summary="merge generateSmallEnemy with generateName, generateHP, generateAttacks">
-      <created>1675359202857</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675359202857</updated>
     </task>
     <task id="LOCAL-00014" summary="override toString (formatting)">
       <created>1675360822042</created>
@@ -461,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675954011316</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="presentation version">
+      <created>1675977089922</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1675977089922</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small fixes" />
     <MESSAGE value="add heroBoostFactor" />
     <MESSAGE value="heroBoostFactor fix" />
     <MESSAGE value="heroBoostFactor append to all heroes; add HP range for final Boss according to room count" />
@@ -504,7 +506,8 @@
     <MESSAGE value="better statistics" />
     <MESSAGE value="fix some warnings" />
     <MESSAGE value="package management" />
-    <option name="LAST_COMMIT_MESSAGE" value="package management" />
+    <MESSAGE value="presentation version" />
+    <option name="LAST_COMMIT_MESSAGE" value="presentation version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
