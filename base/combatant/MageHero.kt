@@ -138,14 +138,14 @@ class MageHero(name: String, hp: Int) : Hero(name, hp) {
             println("\nDie Mana von ${this.name} wurde vollständig aufgefüllt.\n")
             return true
         } else if (item.name == "Manatrank" && this.manaPoints > 40) {
-            println("\nDer Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!\n")
+            println("\nDer Held ${this.name} hat aktuell ${this.manaPoints} das auffüllen lohnt sich nicht!")
             return false
         } else if (item.name == "Heiltrank" && this.hpCurrent <= this.hp.div(2)) {
             hpCurrent = this.hp
             println("\nDer Held ${this.name} wurde vollständig geheilt.\n")
             return true
         } else {
-            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.\n")
+            println("\nDas Leben von ${this.name} ist über die hälfte voll und wird somit nicht geheilt.")
             return false
         }
     }
